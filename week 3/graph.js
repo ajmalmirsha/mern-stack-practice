@@ -142,3 +142,40 @@
 // obj.next()
 // obj.next()
 // obj.throw()
+
+
+class Graph {
+    constructor (){
+        this.graph = new Map()
+    }
+    addToMap(data){
+        this.graph.set(data,new Array())
+    }
+    insert(vertex,edge,isbidirectional){
+        if(!this.graph.has(vertex)){
+            this.addToMap(vertex)
+        }
+        if(!this.graph.has(edge)){
+            this.addToMap(edge)
+        }
+        this.graph.get(vertex).push(edge)
+        if(isbidirectional){
+            this.graph.get(edge).push(vertex)
+        }
+    }
+
+    display(){
+        for(let vertex of this.graph.keys()){
+            const edges = this.graph.get(vertex)
+            console.log(vertex, edges);
+        }
+    }
+}
+
+
+const gp = new Graph()
+
+gp.insert(32,5,true)
+gp.insert(32,6,false)
+gp.insert(2,6,false)
+gp.display()
