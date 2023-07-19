@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="parent" >
+        <div style="padding: 50px;" ><p>jsfd</p></div>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</body>
+
+<script>
+    const ul = document.getElementById('parent')
+    ul.addEventListener('click',(event) => {
+        console.log(event.target.tagName);
+        if (event.target.tagName === 'LI') {
+    // Code to be executed when a list item is clicked
+    console.log('List item clicked:', event.target.textContent);
+  }
+    })
+</script>
+
+</html>
