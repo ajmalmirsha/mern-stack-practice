@@ -352,4 +352,5 @@ const h = new hashTable(56)
 
 h.set('name','ajmal')
 h.set('name','nivas')
+h.set('hdjf','nivas')
 h.display()

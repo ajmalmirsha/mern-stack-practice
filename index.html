@@ -12,9 +12,16 @@
         <li>item 2</li>
         <li>item 3</li>
     </ul>
+    <input id="search" type="text">
 </body>
-
+<script src="./graph.js"></script>
 <script>
+    const search = document.getElementById('search')
+console.log(search);
+search.addEventListener('onChange',(e) => {
+    console.log(e.target.value);
+})
+
     const ul = document.getElementById('parent')
     ul.addEventListener('click',(event) => {
         console.log(event.target.tagName);
