@@ -13,22 +13,20 @@
         <li>item 3</li>
     </ul>
     <input id="search" type="text">
-</body>
-<script src="./graph.js"></script>
-<script>
-    const search = document.getElementById('search')
-console.log(search);
-search.addEventListener('onChange',(e) => {
-    console.log(e.target.value);
-})
 
-    const ul = document.getElementById('parent')
-    ul.addEventListener('click',(event) => {
-        console.log(event.target.tagName);
-        if (event.target.tagName === 'LI') {
-    // Code to be executed when a list item is clicked
-    console.log('List item clicked:', event.target.textContent);
-  }
+    <div id="div">
+        <button id="button">helo</button>
+    </div>
+</body>
+
+<script>
+    const button = document.getElementById('button')
+    button.addEventListener('click',(e)=>{
+        console.log('button clicked');
+    })
+    const div = document.getElementById('div')
+    button.addEventListener('click',(e)=>{
+        console.log('div clicked');
     })
 </script>
 

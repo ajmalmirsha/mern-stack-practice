@@ -264,38 +264,38 @@
 // //   console.log(proxy.age); // Output: Accessing property: age \n 35
   
 
-class Graph {
-    constructor (){
-        this.graph = new Map()
-    }
+// class Graph {
+//     constructor (){
+//         this.graph = new Map()
+//     }
 
-    addToMap(data){
-        this.graph.set(data,new Array())
-    }
+//     addToMap(data){
+//         this.graph.set(data,new Array())
+//     }
 
-    insert(vertex,edges,isbidirectional){
-        if(!this.graph.has(vertex)){
-            this.addToMap(vertex)
-        }
-        if(!this.graph.has(edges)){
-            this.addToMap(edges)
-        }
-        this.graph.get(vertex).push(edges)
-        if(isbidirectional){
-            this.graph.get(edges).push(vertex)
-        }
-    }
+//     insert(vertex,edges,isbidirectional){
+//         if(!this.graph.has(vertex)){
+//             this.addToMap(vertex)
+//         }
+//         if(!this.graph.has(edges)){
+//             this.addToMap(edges)
+//         }
+//         this.graph.get(vertex).push(edges)
+//         if(isbidirectional){
+//             this.graph.get(edges).push(vertex)
+//         }
+//     }
 
-    display (){
-        for(let vertex of this.graph.keys()){
-            const edges = this.graph.get(vertex)
-            console.log(vertex,edges);
-        }
-    }
-}
+//     display (){
+//         for(let vertex of this.graph.keys()){
+//             const edges = this.graph.get(vertex)
+//             console.log(vertex,edges);
+//         }
+//     }
+// }
 
 
-const gp = new Graph()
+// const gp = new Graph()
 
 // gp.insert(34,5)
 // gp.insert(3,5)
@@ -421,13 +421,90 @@ const gp = new Graph()
     
 // }
 
-const arr = ['flower','ajmal','flow']
+// const arr = ['flower','ajmal','flow']
 
-for(let i=0; i<arr.length; i++){
-    let k = 0
-    for(let j=0; j<arr[i].length; j++){
-        if(arr[i][j] === arr[i][k] ){
-            k++
+// for(let i=0; i<arr.length; i++){
+//     let k = 0
+//     for(let j=0; j<arr[i].length; j++){
+//         if(arr[i][j] === arr[i][k] ){
+//             k++
+//         }
+//     }
+// }
+
+
+
+// class Graph {
+//     constructor () {
+//         this.graph = new Map()
+//     }
+
+//     addToMap(data){
+//         this.graph.set(data, new Array())
+//     }
+//     insert(vertex,edge,isbidirectional){
+//         if(!this.graph.has(vertex)){
+//            this.addToMap(vertex)
+//         }
+//          if(!this.graph.has(edge)){
+//             this.addToMap(edge)
+//         }
+//         this.graph.get(vertex).push(edge)
+//         if(isbidirectional){
+//             this.graph.get(edge).push(vertex)
+//         }
+//     }
+
+//     display(){
+//         for(let vertex of this.graph.keys()){
+//             const edges = this.graph.get(vertex)
+//             console.log(vertex, edges);
+//         }
+//     }
+// }
+
+// const gp = new Graph()
+
+// gp.insert(43,54)
+// gp.insert(45,4,true)
+// gp.insert(46,345)
+// gp.insert(48,345)
+// gp.display()
+
+
+class Graph {
+    constructor(){
+        this.graph = new Map()
+    }
+
+    addToGraph(data){
+        this.graph.set(data, new Array())
+    }
+    insert(vertex,edge,isbidirectional){
+        if(!this.graph.get(vertex)){
+            this.addToGraph(vertex)
+        }
+        if(!this.graph.get(edge)){
+            this.addToGraph(edge)
+        }
+        this.graph.get(vertex).push(edge)
+        if(isbidirectional){
+            this.graph.get(edge).push(vertex)
+        }
+    }
+
+    display(){
+        for(let vertex of this.graph.keys()){
+            const edges = this.graph.get(vertex)
+            console.log(vertex,edges);
         }
     }
 }
+
+const gp = new Graph()
+
+gp.insert(4,82)
+gp.insert(445,23)
+gp.insert(454,3)
+gp.insert(42,43,true)
+gp.display()
