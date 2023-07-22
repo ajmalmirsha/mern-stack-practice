@@ -605,16 +605,196 @@
 
 
 
+// class Node {
+//     constructor (value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
+
+// class Bst {
+//     constructor(){
+//         this.root = null
+//     }
+
+//     insert(value){
+//         const node = new Node(value)
+//         if(!this.root){
+//             this.root = node
+//         }else{
+//             this.insertNode(this.root,node)
+//         }
+//     }
+
+//     insertNode(root,node){
+//         if(root.value > node.value){
+//             if(!root.left){
+//                 root.left = node
+//             }else{
+//                 this.insertNode(root.left,node)
+//             }
+//         }else{
+//             if(!root.right){
+//                 root.right = node
+//             }else{
+//                 this.insertNode(root.right,node)
+//             }
+//         }
+//     }
+
+//     isBst(root){
+//         if(!root){
+//             return true
+//         }
+//         if(root.left && root.value < root.left){
+//             return false
+//         }
+//         if(root.right && root.value > root.right){
+//             return false
+//         }
+//         if(!this.isBst(root.left)||!this.isBst(root.right)){
+//             return false
+//         }
+//         return true
+//     }
+
+//     min(root){
+//         if(root.left){
+//             return this.min(root.left)
+//         }else{
+//             return root.value
+//         }
+//     }
+
+//     max(root){
+//         if(root.right){
+//             return this.max(root.right)
+//         }else{
+//             return root.value
+//         }
+//     }
+
+//     postOrder(root){
+//         if(root){
+//         this.postOrder(root.left)
+//         this.postOrder(root.right)
+//         console.log(root.value);  
+//         }
+        
+//     }
+
+//     inOrder(root){
+//         if(root){
+//             this.inOrder(root.left)
+//             console.log(root.value);
+//             this.inOrder(root.right)
+//         }
+//     }
+
+//     preOrder(root){
+//         if(root){
+//             console.log(root.value);
+//             this.preOrder(root.left)
+//             this.preOrder(root.right)
+//         }
+//     }
+
+// }
+
+// const bst = new Bst()
+
+// bst.insert(43)
+// bst.insert(46)
+// bst.insert(4)
+// bst.insert(47)
+// bst.postOrder(bst.root)
+// console.log(bst.isBst(bst.root));
+// console.log(bst.min(bst.root));
+// console.log(bst.max(bst.root));
+// class Node {
+//     constructor (value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
+
+// class Bst {
+//     constructor(){
+//         this.root = null
+//     }
+
+//     insert(value){
+//         const node = new Node(value)
+//         if(!this.root){
+//             this.root = node
+//         }else{
+//             this.insertNode(this.root,node)
+//         }
+//     }
+
+//     insertNode(root,node){
+//         if(root.value > node.value){
+//             if(!root.left){
+//                 root.left = node
+//             }else{
+//                 this.insertNode(root.left,node)
+//             }
+//         }else{
+//             if(!root.right){
+//                 root.right = node
+//             }else{
+//                 this.insertNode(root.right,node)
+//             }
+//         }
+//     }
+    
+//     isBst(root){
+//         if(!root){
+//             return true
+//         }
+//         if(root.left && root.value < root.left){
+//             return false
+//         }
+//         if(root.right && root.value > root.right){
+//             return false
+//         }
+
+//         if(!this.isBst(root.left)||!this.isBst(root.right)){
+//             return false
+//         }
+//         return  true
+//     }
+
+//     postOrder(root){
+//         if(root){
+//             this.postOrder(root.left)
+//             this.postOrder(root.right)
+//             console.log(root.value);
+//         }
+//     }
+// }
+
+// const bst = new Bst()
+
+// bst.insert(34)
+// bst.insert(43)
+// bst.insert(46)
+// bst.insert(90)
+// bst.postOrder(bst.root)
+// console.log(bst.isBst(bst.root));
+
 class Node {
-    constructor (value){
+    constructor(value){
         this.value = value
         this.left = null
         this.right = null
     }
 }
 
-class Bst {
-    constructor(){
+class Bst  {
+    constructor () {
         this.root = null
     }
 
@@ -626,7 +806,6 @@ class Bst {
             this.insertNode(this.root,node)
         }
     }
-
     insertNode(root,node){
         if(root.value > node.value){
             if(!root.left){
@@ -643,55 +822,6 @@ class Bst {
         }
     }
 
-    isBst(root){
-        if(!root){
-            return true
-        }
-        if(root.left && root.value < root.left){
-            return false
-        }
-        if(root.right && root.value > root.right){
-            return false
-        }
-        if(!this.isBst(root.left)||!this.isBst(root.right)){
-            return false
-        }
-        return true
-    }
-
-    min(root){
-        if(root.left){
-            return this.min(root.left)
-        }else{
-            return root.value
-        }
-    }
-
-    max(root){
-        if(root.right){
-            return this.max(root.right)
-        }else{
-            return root.value
-        }
-    }
-
-    postOrder(root){
-        if(root){
-        this.postOrder(root.left)
-        this.postOrder(root.right)
-        console.log(root.value);  
-        }
-        
-    }
-
-    inOrder(root){
-        if(root){
-            this.inOrder(root.left)
-            console.log(root.value);
-            this.inOrder(root.right)
-        }
-    }
-
     preOrder(root){
         if(root){
             console.log(root.value);
@@ -699,16 +829,11 @@ class Bst {
             this.preOrder(root.right)
         }
     }
-
 }
 
 const bst = new Bst()
 
-bst.insert(43)
-bst.insert(46)
-bst.insert(4)
-bst.insert(47)
-bst.postOrder(bst.root)
-console.log(bst.isBst(bst.root));
-console.log(bst.min(bst.root));
-console.log(bst.max(bst.root));
+bst.insert(34)
+bst.insert(5)
+bst.insert(934)
+bst.preOrder(bst.root)

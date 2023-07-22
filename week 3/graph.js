@@ -472,39 +472,77 @@
 // gp.display()
 
 
-class Graph {
-    constructor(){
-        this.graph = new Map()
-    }
+// class Graph {
+//     constructor(){
+//         this.graph = new Map()
+//     }
 
-    addToGraph(data){
-        this.graph.set(data, new Array())
-    }
-    insert(vertex,edge,isbidirectional){
-        if(!this.graph.get(vertex)){
-            this.addToGraph(vertex)
-        }
-        if(!this.graph.get(edge)){
-            this.addToGraph(edge)
-        }
-        this.graph.get(vertex).push(edge)
-        if(isbidirectional){
-            this.graph.get(edge).push(vertex)
-        }
-    }
+//     addToGraph(data){
+//         this.graph.set(data, new Array())
+//     }
+//     insert(vertex,edge,isbidirectional){
+//         if(!this.graph.get(vertex)){
+//             this.addToGraph(vertex)
+//         }
+//         if(!this.graph.get(edge)){
+//             this.addToGraph(edge)
+//         }
+//         this.graph.get(vertex).push(edge)
+//         if(isbidirectional){
+//             this.graph.get(edge).push(vertex)
+//         }
+//     }
 
-    display(){
-        for(let vertex of this.graph.keys()){
-            const edges = this.graph.get(vertex)
-            console.log(vertex,edges);
-        }
-    }
-}
+//     display(){
+//         for(let vertex of this.graph.keys()){
+//             const edges = this.graph.get(vertex)
+//             console.log(vertex,edges);
+//         }
+//     }
+// }
 
-const gp = new Graph()
+// const gp = new Graph()
 
-gp.insert(4,82)
-gp.insert(445,23)
-gp.insert(454,3)
-gp.insert(42,43,true)
-gp.display()
+// gp.insert(4,82)
+// gp.insert(445,23)
+// gp.insert(454,3)
+// gp.insert(42,43,true)
+// gp.display()
+
+
+// class Graph {
+//     constructor (){
+//         this.graph = new Map()
+//     }
+
+//     addToGraph(data){
+//         this.graph.set(data, new Array())
+//     }
+//     insert(vertex,edge,isbidirectional){
+//         if(!this.graph.get(vertex)){
+//             this.addToGraph(vertex)
+//         }
+//         if(!this.graph.get(edge)){
+//             this.addToGraph(edge)
+//         }
+//         this.graph.get(vertex).push(edge)
+//         if(isbidirectional){
+//             this.graph.get(edge).push(vertex)
+//         }
+//     }
+
+//     display(){
+//         for(let vertex of this.graph.keys()){
+//             const edges = this.graph.get(vertex)
+//             console.log(vertex,edges);
+//         }
+//     }
+// }
+
+// const gp = new Graph()
+
+// gp.insert(44,6)
+// gp.insert(489,56,true)
+// gp.insert(47,6)
+// gp.insert(49,657)
+// gp.display()
