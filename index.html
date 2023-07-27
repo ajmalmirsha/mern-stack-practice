@@ -6,28 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <ul id="parent" >
-        <div style="padding: 50px;" ><p>jsfd</p></div>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-    </ul>
+   
     <input id="search" type="text">
 
-    <div id="div">
-        <button id="button">helo</button>
-    </div>
+    <p>default <span id="default" ></span></p>
+    
 </body>
 
 <script>
-    const button = document.getElementById('button')
-    button.addEventListener('click',(e)=>{
-        console.log('button clicked');
-    })
-    const div = document.getElementById('div')
-    button.addEventListener('click',(e)=>{
-        console.log('div clicked');
-    })
+const search = document.getElementById('search')
+const defaults = document.getElementById('default')
+const setValue = setDefault((text)=>{
+     defaults.innerHTML = text
+})
+search.addEventListener('input',(e)=>{
+    setValue(e.target.value)
+})
+
+
+function setDefault (cb, delay=1000) {
+    let timeOut
+    return (...args) => {
+         console.log(args);
+        clearTimeout(timeOut)
+         timeOut = setTimeout(()=>{
+            cb(args)
+        },delay)
+     }
+}
 </script>
 
 </html>
