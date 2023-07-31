@@ -271,3 +271,94 @@
 //     }
 
 //     console.log(oddMultiplyer(4));
+
+
+
+class Node {
+    constructor (value) {
+        this.value = value
+        this.prev = null
+        this.next = null
+    }
+}
+
+
+class DLinkdlist {
+    constructor () {
+        this.head = null
+        this.tail = null
+    }
+
+
+    firstAdd(value){
+        const node = new Node(value)
+        if(!this.head){
+            this.head = node
+            this.tail = node
+            return
+        }
+        this.head.prev = node
+        node.next = this.head
+        this.head = node
+    }
+
+    lastAdd(value){
+        const node = new Node(value)
+        if(!this.head){
+            this.head = node
+            this.tail = node
+            return
+        }
+
+        node.prev = this.tail
+        this.tail.next = node
+        this.tail = node
+    }
+
+    addAtPos(pos, value){
+        const node = new Node(value)
+
+        let temp = this.head
+
+        while(temp){
+            if(temp.next.value === pos){
+                node.next = temp.next.next
+                temp.next.prev = node
+                temp.next = node
+                return
+            }
+            temp = temp.next
+        }
+    }
+
+    delete(pos){
+        let temp = this.head
+        while(temp){
+            if(temp.value === pos){
+                temp.next.prev = temp.prev
+                temp.prev.next = temp.next
+                return
+            }
+            temp = temp.next
+        }
+    }
+
+    display () {
+        let temp = this.head
+        while (temp){
+            console.log(temp.value);
+            temp = temp.next
+        }
+    }
+
+}
+
+const dl = new DLinkdlist()
+
+dl.firstAdd(43)
+dl.lastAdd(99)
+dl.firstAdd(44)
+dl.firstAdd(45)
+dl.delete(44)
+// dl.addAtPos(43,77)
+dl.display()

@@ -261,3 +261,35 @@
 // bubble(arr)
 
 // console.log(arr);
+
+// function bubble (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         for(let j=0; j<arr.length; j++){
+//             if(arr[j] > arr[j+1]){
+//                 [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// const arr  = [234,45,2,42,5,35,235,23]
+
+// console.log(bubble(arr));
+
+
+// function bubble (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         for(let j=0; j<arr.length; j++){
+//             if(arr[j] > arr[j+1]){
+//                 [arr[j],arr[j+1]] = [arr[j+1],arr[j]]
+//             }
+//         }
+//     }
+// }
+
+// const arr = [24,234,3,5,34,54,6,43]
+
+// bubble(arr)
+
+// console.log(arr);

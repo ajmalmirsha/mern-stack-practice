@@ -260,3 +260,47 @@
 // st.push(46)
 // st.pop()
 // st.display()
+
+// class Node {
+//     constructor (value) {
+//         this.value = value
+//         this.next = null
+//     }
+// }
+
+// class stack {
+//     constructor () {
+//         this.top = null
+//     }
+
+//     push(value) {
+//         const node = new Node(value)
+//         if(!this.top){
+//             this.top = node
+//         }else{
+//             node.next = this.top
+//             this.top = node
+//         }
+//     }
+
+//     pop(){
+//         this.top = this.top.next
+//     }
+
+//     display() {
+//         let temp = this.top
+//         while(temp){
+//             console.log(temp.value);
+//             temp = temp.next
+//         }
+//     }
+// }
+
+
+// const st = new stack()
+
+// st.push(34)
+// st.push(35)
+// st.push(36)
+// st.pop()
+// st.display()

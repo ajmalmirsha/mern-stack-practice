@@ -104,3 +104,18 @@
 // selection(arr)
 
 // console.log(arr);
+
+// function selection (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         for(let j=i+1; j<arr.length; j++){
+//             if(arr[i] > arr[j]){
+//                 [arr[i],arr[j]] = [arr[j],arr[i]]
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// const arr  = [23,23,43,434,534,24,24,24,2435435]
+
+// console.log(selection(arr));

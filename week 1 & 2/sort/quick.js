@@ -243,3 +243,76 @@
 // const arr = [42,4,23,4,23,4]
 
 // console.log(quick(arr));
+
+
+// function quick (arr) {
+//     if(arr.length <= 0){
+//         return arr
+//     }
+//     const pivot = arr[0]
+//     const left = []
+//     const right = []
+//     for(let i=1; i<arr.length; i++){
+//         if(arr[i] < pivot){
+//             left.push(arr[i])
+//         }else{
+//             right.push(arr[i])
+//         }
+//     }
+//     return [...quick(left),pivot,...quick(right)]
+// }
+
+// const arr = [23,234,435,456,546,2]
+
+// console.log(quick(arr));
+
+// function quick (arr) {
+//     if(arr.length <= 0){
+//         return arr
+//     }
+
+//     const pivot = arr[0]
+//     const left = []
+//     const right = []
+//     for(let i=1; i<arr.length; i++){
+//         if(arr[i] < pivot){
+//             left.push(arr[i])
+//         }else{
+//             right.push(arr[i])
+//         }
+//     }
+//     return  [...quick(left),pivot,...quick(right)]
+// }
+// const arr = [3,234,34,235,23,23,423,4]
+
+// console.log(quick(arr));
+
+
+// function quick (arr) {
+//     if(arr.length <= 0){
+//         return arr
+//     }
+//     const pivot = arr[0]
+//     const left = []
+//     const right = []
+//     for(let i=1; i<arr.length; i++){
+//         if(arr[i] < pivot){
+//             left.push(arr[i])
+//         }else{
+//             right.push(arr[i])
+//         }
+//     }
+//     return [...quick(left),pivot,...quick(right)]
+// }
+
+// const arr = [3,234,23,4,235,5,5]
+
+// console.log(quick(arr));
+
+
+// function abc () {
+//     console.log(arguments);
+// }
+
+// abc('a','b',6)
+

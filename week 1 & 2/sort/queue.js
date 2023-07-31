@@ -255,3 +255,50 @@
 // q.enqueue(38)
 // q.dequeue()
 // q.display()
+
+
+// class Node {
+//     constructor (value) {
+//         this.value = value
+//         this.next = null
+//     }
+// }
+
+// class queue {
+//     constructor () {
+//         this.front = null
+//         this.rear = null
+//     }
+
+//     enqueue(value){
+//         const node = new Node(value)
+//         if(!this.front){
+//             this.front = node
+//             this.rear = node
+//         }else{
+//             this.rear.next = node
+//             this.rear = node
+//         }
+//     }
+
+//     dequeue(){
+//         this.front = this.front.next
+//     }
+
+//     display () {
+//         let temp = this.front
+//         while(temp){
+//             console.log(temp.value);
+//             temp = temp.next
+//         }
+//     }
+// }
+
+// const q = new queue()
+
+// q.enqueue(3)
+// q.enqueue(4)
+// q.enqueue(5)
+// q.enqueue(6)
+// q.dequeue()
+// q.display()

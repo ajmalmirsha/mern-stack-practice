@@ -816,3 +816,139 @@
 // const result = JSON.stringify(arr)
 
 // console.log(JSON.parse(result));
+
+
+class Node {
+    constructor (value) {
+        this.value = value
+        this.next = null
+    }
+}
+
+class Linkdlist {
+    constructor () {
+        this.head = null
+        this.tail = null
+    }
+
+    firstAdd(value){
+        const node = new Node(value)
+        if(!this.head){
+            this.head = node
+            this.tail = node
+            return
+        }
+
+        node.next = this.head
+        this.head = node
+
+    }
+
+    lastAdd(value){
+        const node = new Node(value)
+
+        if(!this.head){
+            this.head = node
+            this.tail = node
+            return
+        }
+
+        this.tail.next = node
+        this.tail = node
+    }
+
+    delete(pos){
+        let temp = this.head
+        if(this.head.value === pos){
+            this.head = this.head.next
+            return
+        }
+        while(temp){
+            if(temp.next.value === pos){
+                temp.next = temp.next.next
+                return
+            }
+
+            temp = temp.next
+        }
+    }
+
+    addAtPos(pos,value){
+        const node = new Node(value)
+
+        let temp = this.head
+        while(temp){
+            if( temp.next.value === pos ){
+                node.next = temp.next.next
+                temp.next = node
+                return
+            }
+            temp = temp.next
+        }
+    }
+
+    addAfter(pos,value){
+        const node = new Node(value)
+        let temp = this.head
+        while(temp){
+            if(temp.value === pos){
+                node.next = temp.next
+                temp.next = node
+                return
+            }
+            temp = temp.next
+        }
+    }
+
+    addBefore(pos,value){
+        const node = new Node(value)
+        let temp = this.head
+        while(temp){
+            if(temp.next.value === pos){
+                node.next = temp.next
+                temp.next = node
+                return
+            }
+            temp = temp.next
+        }
+    }
+
+    deleteBefore(pos){
+        let temp = this.head
+        if(this.head.value === pos){
+            return
+        }
+        while(temp){
+            if(temp.next.next.value === pos){
+                temp.next = temp.next.next
+                return
+            }
+            temp = temp.next
+        }
+    }
+
+
+    display (){
+        let temp = this.head
+        while(temp){
+            console.log(temp.value);
+            temp = temp.next
+        }
+
+    }
+
+}
+
+const li = new Linkdlist()
+
+li.firstAdd(23)
+li.firstAdd(24)
+li.lastAdd(90)
+li.firstAdd(25)
+li.firstAdd(26)
+li.delete(26)
+// li.addAtPos(24,8989)
+li.addAfter(24,8989)
+li.addBefore(24,8787)
+li.deleteBefore(90)
+li.display()

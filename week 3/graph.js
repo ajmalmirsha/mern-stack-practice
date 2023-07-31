@@ -1521,3 +1521,154 @@
 // gp.bfs(1)
 // // gp.delete(1)
 // // gp.display()
+
+// class Graph {
+//     constructor(){
+//         this.graph = new Map()
+//     }
+
+//     addToMap(data){
+//         this.graph.set(data, new Array())
+//     }
+
+//     insert(vertex,edge,isbidirectional){
+//         if(!this.graph.has(vertex)){
+//             this.addToMap(vertex)
+//         }
+//         if(!this.graph.has(edge)){
+//             this.addToMap(edge)
+//         }
+//         this.graph.get(vertex).push(edge)
+//         if(isbidirectional){
+//             this.graph.get(edge).push(vertex)
+//         }
+//     }
+
+//    bfs (startVertex) {
+//     const visited = new Set()
+//     const queue = []
+
+//     visited.add(startVertex)
+//     queue.push(startVertex)
+
+//     while(queue.length > 0){
+//         const vertex = queue.shift()
+//         console.log(vertex);
+//         const edges = this.graph.get(vertex)
+//         for(let edge of edges){
+//             if(!visited.has(edge)){
+//                 this.bfs(edge)
+//             }
+//         }
+//     }
+//    }
+
+//    dfs(startVertex){
+//         const visited = new Set()
+//         const dfsHelper = (vertex) => {
+//             visited.add(vertex)
+//             console.log(vertex);
+//             const edges = this.graph.get(vertex)
+//             for(let edge of edges){
+//                 if(!visited.has(edge)){
+//                     dfsHelper(edge)
+//                 }
+//             }
+//         }
+//         dfsHelper(startVertex)
+//    }
+
+//     display(){
+//         for(let vertex of this.graph.keys()){
+//             const edges = this.graph.get(vertex)
+//             console.log(vertex,edges);
+//         }
+//     }
+// }
+
+// const gp = new Graph()
+
+// gp.insert(1,2)
+// gp.insert(2,3)
+// gp.insert(3,4)
+// gp.dfs(1)
+// // gp.display()
+
+class Graph {
+     constructor () {
+        this.graph = new Map()
+     }
+
+     addToMap(data){
+        this.graph.set(data, new Array())
+     }
+
+     insert(vertex,edge,isbidirectional){
+        if(!this.graph.has(vertex)){
+            this.addToMap(vertex)
+        }
+        if(!this.graph.has(edge)){
+            this.addToMap(edge)
+        }
+
+        this.graph.get(vertex).push(edge)
+        if(isbidirectional){
+            this.graph.get(edge).push(vertex)
+        }
+     }
+
+
+    bfs (startVertex) {
+        const visited = new Set()
+        const queue = []
+
+        visited.add(startVertex)
+        queue.push(startVertex)
+
+        while(queue.length > 0){
+            const vertex = queue.shift()
+            console.log(vertex);
+            const edges = this.graph.get(vertex)
+            for(let edge of edges){
+                if(!visited.has(edge)){
+                    this.bfs(edge)
+                }
+            }
+        }
+    }
+
+    dfs(startVertex){
+        const visited = new Set()
+        const dfsHelper = (vertex) => {
+            visited.add(vertex)
+            console.log(vertex);
+            const edges = this.graph.get(vertex)
+            for(let edge of edges){
+                if(!visited.has(edge)){
+                    dfsHelper(edge)
+                }
+            }
+        }
+        dfsHelper(startVertex)
+    }
+
+    delete()
+
+
+     display () {
+        for(let vertex of this.graph.keys()){
+            const edges = this.graph.get(vertex)
+            console.log(vertex,edges);
+        }
+     }
+}
+
+const gp = new Graph()
+
+gp.insert(1,2)
+gp.insert(2,3)
+gp.insert(3,4)
+gp.insert(4,5)
+gp.delete(1)
+gp.display()
+// gp.dfs(1)

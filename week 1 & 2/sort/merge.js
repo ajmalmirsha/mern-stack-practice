@@ -1,5 +1,3 @@
-
-
 // function mergeSort (arr) {
 //     if(arr.length <= 1){
 //         return arr
@@ -22,12 +20,9 @@
 //      return [...ans,...left,...right]
 // }
 
-
 // const arr = [345,345,34,45,345,23,532,42]
-    
+
 // console.log(mergeSort(arr));
-
-
 
 // function mergeSort (arr) {
 //     if(arr.length <= 1){
@@ -52,11 +47,9 @@
 //     return [...ans,...left,...right]
 // }
 
-
 // const arr = [43,5,53,45,4534,634,65346,6]
 
 // console.log(mergeSort(arr));
-
 
 // for(var i=0; i<10; i++){
 
@@ -65,7 +58,6 @@
 // console.log(i);
 
 // console.log((.2+.1 )=== .3)
-
 
 // const a = 10
 // console.log(a);
@@ -120,7 +112,7 @@
 //             marks:30
 //         },{
 //             subject:'che',
-//             marks:51 
+//             marks:51
 //         }
 //     ]
 //     },
@@ -128,7 +120,6 @@
 
 // const names = []
 // const marks = []
-
 
 // for(let i=0; i<arr.length; i++){
 //     names.push(arr[i].name)
@@ -139,16 +130,10 @@
 //     marks.push(sum)
 // }
 
-
-
-
-
-
 // const result = []
 // for(let i=0; i<arr.length; i++){
 //     result.push({name:names[i],marks:marks[i]})
 // }
-
 
 // const result = arr.map((x) =>{
 //     const filteredMarks = x.mark.filter((x) => x.marks > 50)
@@ -161,7 +146,6 @@
 //     )
 // console.log(result[0].mark);
 
-
 // const arr2 = [2,3,234,234,23,4,2]
 
 // let obj={
@@ -173,9 +157,9 @@
 //     rahul:{
 //         place:"kannur",
 //         age:24,
-        
+
 //     },
-    
+
 //     ashik:{
 //         place:"kannur",
 //         age:13,
@@ -196,8 +180,6 @@
 
 // console.log(max);
 
-
-
 // function merge (arr) {
 //     if(arr.length <= 1){
 //         return arr
@@ -207,7 +189,6 @@
 //     const right = arr.slice(mid)
 //    return mergeSort(merge(left),merge(right))
 // }
-
 
 // function mergeSort(left,right){
 //     const ans = []
@@ -221,11 +202,9 @@
 //     return [...ans,...left,...right]
 // }
 
-
 // const arr = [34,345,345,34,534,5]
 
 // console.log(merge(arr));
-
 
 // function merge (arr) {
 //     if(arr.length <= 1){
@@ -238,7 +217,6 @@
 //     mergeSort(merge(left),merge(right))
 // }
 
-
 // function mergeSort (left,right) {
 //     const ans  = []
 //     while(left.length && right.length){
@@ -250,8 +228,6 @@
 //     }
 //     return [...ans,...left,...right]
 // }
-
-
 
 // function merge (arr) {
 //     if(arr.length <= 1) {
@@ -278,7 +254,6 @@
 // const arr = [3,435,435,345,34,5345,345]
 
 // console.log(merge(arr));
-
 
 // function merge (arr) {
 //     if(arr.length <= 1){
@@ -308,7 +283,6 @@
 
 // console.log(merge(arr));
 
-
 // function merge (arr) {
 //     if(arr.length <= 1){
 //         return arr
@@ -326,17 +300,15 @@
 //       ans.push(right.shift())
 //     }else{
 //         ans.push(left.shift())
-//     }   
+//     }
 //     }
 //     return [...ans,...left,...right]
 
 // }
 
-
 // const arr = [3423,423,4,23,42,34,2,34]
 
 // console.log(merge(arr));
-
 
 // function merge (arr){
 //     if(arr.length <= 1){
@@ -363,7 +335,6 @@
 // const arr = [34,34,23,234,25,235,235]
 
 // console.log(merge(arr));
-
 
 // function merge (arr) {
 //     if(arr.length <= 1){
@@ -414,5 +385,87 @@
 // }
 
 // const arr = [32,3,43,5,3,45,34,5,43]
+
+// console.log(merge(arr));
+
+// function mergeSort(left, right) {
+//   const ans = [];
+//   while (left.length && right.length) {
+//     if (left[0] < right[0]) {
+//       ans.push(left.shift());
+//     } else {
+//       ans.push(right.shift());
+//     }
+//   }
+
+//   return [...ans, ...left, ...right];
+// }
+
+// function merge(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+//   const mid = Math.floor(arr.length / 2);
+//   const left = arr.slice(0, mid);
+//   const right = arr.slice(mid);
+
+//   return mergeSort(merge(left), merge(right));
+// }
+
+// const arr = [2, 234, 234, 25, 4, 5];
+
+// console.log(merge(arr));
+
+
+// function merge (arr) {
+//     if(arr.length <= 1){
+//         return arr
+//     }
+//     const mid = Math.floor(arr.length / 2)
+//     const left = arr.slice(0,mid)
+//     const right = arr.slice(mid)
+//     return mergeSort(left,right)
+// }
+
+// function mergeSort(left,right){
+//     const ans = []
+//     while(left.length && right.length){
+//         if(left[0] < right[0]){
+//             ans.push(left.shift())
+//         }else{
+//             ans.push(right.shift())
+//         }
+//     }
+//     return [...ans,...left,...right]
+// }
+
+// const arr = [23,23,424,235,345,23,423,4]
+
+
+// console.log(merge(arr));
+
+// function merge (arr) {
+//     if(arr.length <= 1){
+//         return arr
+//     }
+//     const mid = Math.floor(arr.length / 2)
+//     const left = arr.slice(0,mid)
+//     const right = arr.slice(mid)
+//     return mergeSort(merge(left),merge(right))
+// }
+
+// function mergeSort(left,right){
+//     const ans = []
+//     while(left.length && right.length){
+//         if(left[0] < right[0]){
+//             ans.push(left.shift())
+//         }else{
+//             ans.push(right.shift())
+//         }
+//     }
+//     return [...ans,...left,...right]
+// }
+
+// const arr = [23,423,42,3423,545,3,2,4]
 
 // console.log(merge(arr));

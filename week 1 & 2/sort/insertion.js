@@ -231,3 +231,60 @@
 
 
 // console.log(insertion(arr));
+
+// function insertion (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         let curr = arr[i]
+//         let j = i - 1
+//         while( j >= 0 && arr[j] > curr ){
+//             arr[j+1] = arr[j]
+//             j--
+//         }
+//         arr[j+1] = curr
+//     }
+// }
+
+// const arr = [23,234,23,42,34,235,53]
+
+// insertion(arr)
+
+// console.log(arr);
+
+
+// function inserttion (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         let curr = arr[i]
+//         let j = i - 1
+//         while (j >= 0 && arr[j] > curr){
+//             arr[j+1] = arr[j]
+//             j--
+//         }
+//         arr[j+1] = curr
+//     }
+// }
+
+// const arr = [32,234,23,4,234,2,3]
+
+
+// inserttion(arr)
+
+// console.log(arr)
+
+
+// function insertion (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         let curr = arr[i]
+//         let j = i - 1
+//         while(j>=0 && arr[j] > curr){
+//             arr[j+1] = arr[j]
+//             j--
+//         }
+//         arr[j+1] = curr
+//     }
+// }
+
+// const arr = [23,43,534,5,24,234,34,5]
+
+// insertion(arr)
+
+// console.log(arr);
