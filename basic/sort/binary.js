@@ -290,3 +290,20 @@
 // const arr = [1,2,4,5,67,76,78]
 
 // console.log(binary(arr,2));
+
+const binarySearch = (arr, target) => {
+   let left = 0;
+   let right = arr.length - 1;
+
+   while(left <= right){
+    const mid = Math.floor((left + right) / 2);
+    if(arr[mid] === target) return arr[mid];
+    if(arr[mid] < target){
+        left = mid + 1;
+    }else{
+        right = mid - 1
+    }
+   }
+}
+
+console.log(binarySearch([1,2,4,6,7,8,34], 1))

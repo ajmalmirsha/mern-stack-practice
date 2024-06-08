@@ -1,4 +1,3 @@
-
 // class Node {
 //     constructor(value){
 //         this.prev = null
@@ -25,7 +24,6 @@
 //         this.head = node
 //     }
 
-
 //     Print () {
 //         if(this.head){
 //             let temp = this.head
@@ -45,9 +43,6 @@
 // db.firstAdd(45)
 // db.Print()
 
-
-
-
 // class Node {
 //     constructor(value){
 //         this.value = value
@@ -55,7 +50,6 @@
 //         this.next = null
 //     }
 // }
-
 
 // class Double {
 //     constructor(){
@@ -81,7 +75,7 @@
 //             this.tail = node
 //             return
 //         }
-//         node.prev = this.tail 
+//         node.prev = this.tail
 //         this.tail.next = node
 //         this.tail = node
 //     }
@@ -164,7 +158,6 @@
 //     }
 // }
 
-
 // const db = new Double()
 
 // db.firstAdd(45)
@@ -176,8 +169,6 @@
 // db.delete(90)
 // db.print()
 
-
-
 // class Node {
 //     constructor(value){
 //         this.prev = null
@@ -185,7 +176,6 @@
 //         this.next = null
 //     }
 // }
-
 
 // class double {
 //     constructor () {
@@ -225,7 +215,7 @@
 //         while(temp){
 //             if(temp.next.value === pos){
 //                temp.next.next.prev = temp
-//                temp.next = 
+//                temp.next =
 //             }
 //         }
 //     }
@@ -251,13 +241,10 @@
 // db.fristAdd(5)
 // db.display()
 
-
-
 // var i = 1;
 // for (;i<4;){
 //   i = i + 1;
 // }
-
 
 // function oddMultiplyer (n) {
 //     let odd = 1
@@ -266,13 +253,11 @@
 //     sum *= odd
 //     odd += 2
 //     }
-    
+
 //     return sum
 //     }
 
 //     console.log(oddMultiplyer(4));
-
-
 
 // class Node {
 //     constructor (value) {
@@ -282,13 +267,11 @@
 //     }
 // }
 
-
 // class DLinkdlist {
 //     constructor () {
 //         this.head = null
 //         this.tail = null
 //     }
-
 
 //     firstAdd(value){
 //         const node = new Node(value)
@@ -362,3 +345,120 @@
 // dl.delete(44)
 // // dl.addAtPos(43,77)
 // dl.display()
+
+class Node {
+  constructor(value) {
+    this.prev = null;
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class DoubleLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  firstAdd(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+      return;
+    }
+
+    this.head.prev = node;
+    node.next = this.head;
+    this.head = node;
+  }
+
+  lastAdd(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+      return;
+    }
+    node.prev = this.tail;
+    this.tail.next = node;
+    this.tail = node;
+  }
+
+  addAtPos(pos, value) {
+    if (!this.head) return console.log("list is empty!");
+    const node = new Node(value);
+
+    let temp = this.head;
+
+    while (temp) {
+      if (temp.next.value === pos) {
+        node.next = temp.next.next;
+        node.prev = temp;
+        temp.next.next.prev = node;
+        temp.next = node;
+        return;
+      }
+      temp = temp.next;
+    }
+  }
+
+  addAfter(pos, value) {
+    if (!this.head) return console.log("list is empty");
+    const node = new Node(value);
+
+    let temp = this.head;
+
+    while (temp) {
+      if (temp.value === pos) {
+        node.next = temp.next;
+        node.prev = temp;
+        temp.next = node;
+        return;
+      }
+      temp = temp.next;
+    }
+  }
+
+  addBefore(pos, value) {
+    if (!this.head) return console.log("list is empty");
+    const node = new Node(value);
+    let temp = this.head;
+    if (temp.value === pos) {
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
+      return;
+    }
+    while (temp) {
+      if (temp.next.value === pos) {
+        node.prev = temp.next;
+        node.next = temp.next;
+        temp.next = node;
+        return;
+      }
+      temp = temp.next;
+    }
+  }
+
+  display() {
+    let temp = this.head;
+    while (temp) {
+      console.log(temp.value);
+      temp = temp.next;
+    }
+  }
+}
+
+const dl = new DoubleLinkedList();
+
+dl.firstAdd(3);
+dl.firstAdd(4);
+dl.firstAdd(6);
+dl.lastAdd(7);
+dl.lastAdd(8);
+dl.lastAdd(9);
+dl.addAtPos(7, 77);
+dl.addAfter(77, 88);
+dl.addBefore(6, 10);
+dl.display();
