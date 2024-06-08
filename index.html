@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input id="search" type="text">
+
+    <p>default <span id="default" ></span></p>
+    
+</body>
+
+<script>
+const search = document.getElementById('search')
+const defaults = document.getElementById('default')
+const setValue = setDefault((text)=>{
+     defaults.innerHTML = text
+})
+search.addEventListener('input',(e)=>{
+    setValue(e.target.value)
+})
+
+
+function setDefault (cb, delay=1000) {
+    let timeOut
+    return (...args) => {
+         console.log(args);
+        clearTimeout(timeOut)
+         timeOut = setTimeout(()=>{
+            cb(args)
+        },delay)
+     }
+}
+</script>
+
+</html>
