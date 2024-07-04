@@ -3,7 +3,7 @@
 //       this.table = new Array(size);
 //       this.size = size;
 //     }
-  
+
 //     hash(key) {
 //       if (typeof key === "string") {
 //         let total = 0;
@@ -14,7 +14,7 @@
 //       }
 //       return key % this.size;
 //     }
-  
+
 //     set(key, value) {
 //       const index = this.hash(key);
 //       // this.table [index] = value
@@ -30,7 +30,7 @@
 //         }
 //       }
 //     }
-  
+
 //     get(key) {
 //       const index = this.hash(key);
 //       // return this.table[index]
@@ -54,7 +54,7 @@
 //         }
 //       }
 //     }
-  
+
 //     display() {
 //       for (let i = 0; i < this.table.length; i++) {
 //         if (this.table[i]) {
@@ -63,9 +63,9 @@
 //       }
 //     }
 //   }
-  
+
 //   const table = new hashTable(50);
-  
+
 //   table.set("name", "muhsin");
 //   table.set("mane", "muhsin");
 //   table.set("age", "22");
@@ -73,10 +73,8 @@
 //   // console.log(table.get("name"));
 //   // table.set("mane", "dfg");
 //   table.remove("name")
-  
+
 //   table.display();
-
-
 
 // class hashTable {
 //     constructor(size){
@@ -153,8 +151,6 @@
 // hash.delete('mane')
 // hash.print()
 
-
-
 // class hashTable {
 //     constructor(size){
 //         this.size = size
@@ -227,8 +223,6 @@
 // h.remove('name')
 // h.display()
 
-
-
 // class hashTable {
 //     constructor(size){
 //         this.table = new Array(size)
@@ -292,7 +286,6 @@
 //     }
 // }
 
-
 // const h = new hashTable(6)
 
 // h.set('name','ajmal')
@@ -303,7 +296,6 @@
 // h.remove('place')
 
 // h.display()
-
 
 // class hashTable {
 //     constructor(size){
@@ -321,7 +313,6 @@
 //         }
 //         return key % this.size
 //     }
-
 
 //     set(key,value){
 //         const index = this.hash(key)
@@ -355,8 +346,6 @@
 // h.set('hdjf','nivas')
 // h.display()
 
-
-
 // class hashTable {
 //     constructor (size) {
 //         this.table = new Array(size)
@@ -389,7 +378,6 @@
 //         }
 //     }
 
-
 //     display () {
 //         for(let i=0; i<this.table.length; i++){
 //             if(this.table[i]){
@@ -406,7 +394,6 @@
 // hash.insert('age',18)
 // // hash.insert('name','ajmal')
 // hash.display()
-
 
 // class hashTable {
 //     constructor (size) {
@@ -474,7 +461,6 @@
 //     }
 // }
 
-
 // const h = new hashTable(9)
 
 // h.set('name','ajmal')
@@ -483,7 +469,6 @@
 // console.log(h.get('name'));
 // h.delete('age')
 // h.display()
-
 
 // class hashTable {
 //     constructor (size) {
@@ -549,7 +534,6 @@
 //         }
 //     }
 
-
 //     const h = new hashTable(9)
 
 //     h.set('name','ajmal')
@@ -558,8 +542,6 @@
 //     console.log(h.get('age'));
 //     h.remove('age')
 //     h.display()
-
-
 
 // class hashTable {
 //     constructor (size) {
@@ -578,20 +560,20 @@
 //         return key % this.size
 //     }
 
-//     set(key,value){
-//         const index = this.hash(key)
-//         const bucket = this.table[index]
-//         if(!bucket){
-//             this.table[index] = [[key,value]]
+// set(key,value){
+//     const index = this.hash(key)
+//     const bucket = this.table[index]
+//     if(!bucket){
+//         this.table[index] = [[key,value]]
+//     }else{
+//         const samekeyItem = bucket.find(item => item[0] === key)
+//         if(samekeyItem){
+//             samekeyItem[1] = value
 //         }else{
-//             const samekeyItem = bucket.find(item => item[0] === key)
-//             if(samekeyItem){
-//                 samekeyItem[1] = value
-//             }else{
-//                 bucket.push([key,value])
-//             }
+//             bucket.push([key,value])
 //         }
 //     }
+// }
 
 //     get(key){
 //         const index = this.hash(key)
@@ -637,3 +619,99 @@
 // h.remove('place')
 // console.log(h.get('age'));
 // h.display()
+
+// class hashTable {
+//   constructor(size) {
+//     this.table = [];
+//     this.size = size;
+//   }
+
+//   hash(key) {
+//     if (typeof key === "string")
+//       return (
+//         key.split("").reduce((acc, curr) => acc + curr.charCodeAt(), 0) %
+//         this.size
+//       );
+//     return key % this.size;
+//   }
+
+//   set(key, value) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (!bucket) {
+//       this.table[index] = [[key, value]];
+//     } else {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       if (samekeyItem) {
+//         samekeyItem[1] = value;
+//       } else {
+//         bucket.push([key, value]);
+//       }
+//     }
+//   }
+
+//   get(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (!bucket) return console.log("item not found!");
+//     const samekeyItem = bucket.find((item) => item[0] === key);
+//     if (samekeyItem) {
+//       return console.log(samekeyItem[1]);
+//     }
+//     return console.log("item not found!");
+//   }
+
+//   remove(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (!bucket) return console.log("item not found");
+//     const samekeyItem = bucket.find((item) => item[0] === key);
+//     if(samekeyItem){
+//         bucket.splice(bucket.indexOf(samekeyItem),1)
+//     }
+// }
+
+//   print() {
+//     this.table.map((x) => x && console.log(x));
+//   }
+// }
+
+// const h = new hashTable(10);
+
+// h.set("one", 1);
+// h.set("two", 2);
+// h.set("three", 3);
+// h.set("four", 4);
+// h.set("two", 22);
+// h.get("two");
+// h.remove("three")
+// h.print();
+
+class HashTable {
+  constructor(size) {
+    this.size = size;
+    this.table = [];
+  }
+
+  hash(key) {
+    if (typeof key === "string") {
+      return key.split("").map((x) => x.charCodeAt()) % this.size;
+    }
+    return key % this.size;
+  }
+
+  set(key, value) {
+    const index = this.hash(key);
+    const bucket = this.table[index]
+    if(!bucket){
+        this.table[index] = [[key,value]]
+    }else{
+        const samekeyItem = bucket.find(item => item[0] === key);
+        if(samekeyItem){
+            samekeyItem[1] = value;
+        }else{
+            bucket.push([key, value])
+        }
+    }
+  }
+}

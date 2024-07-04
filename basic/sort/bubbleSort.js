@@ -1,5 +1,3 @@
-
-
 // function bubble (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         for(let j=0; j<arr.length; j++){
@@ -10,14 +8,11 @@
 //     }
 // }
 
-
 // const arr = [34,5,3,52,5,4]
 
 // bubble(arr)
 
 // console.log(arr);
-
-
 
 // function bubble (arr){
 //     for(let i=0 ; i<arr.length; i++){
@@ -35,7 +30,6 @@
 
 // // console.log(arr);
 
-
 // function bubble (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         for(let j=0; j<arr.length; j++){
@@ -46,14 +40,11 @@
 //     }
 // }
 
-
 // const arr = [23,4,5,2,3,3,553,4,3,2]
 
 // bubble(arr)
 
 // console.log(arr);
-
-
 
 // function bubble (arr) {
 //     for(let i=0;i<arr.length; i++){
@@ -71,7 +62,6 @@
 // bubble(arr)
 
 // console.log(arr);
-
 
 // function bubble (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -104,12 +94,8 @@
 //     }
 // }
 
-
 // bubble(arr)
 // console.log(arr);
-
-
-
 
 // quick sort
 
@@ -133,9 +119,7 @@
 
 // console.log(quick(arr));
 
-
 // insertion sort
-
 
 // function insertion (arr) {
 //   for(let i=0; i<arr.length; i++){
@@ -152,17 +136,9 @@
 
 // console.log(insertion(arr));
 
-
-
-
 // merge sort
 
-
-
-
-
 // slection sort
-
 
 // function selection (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -178,7 +154,6 @@
 
 // console.log(arr);
 
-
 // function bubble (arr) {
 //     for (let i = 0; i < arr.length; i++) {
 //         for(let j=0; j<arr.length; j++){
@@ -186,7 +161,7 @@
 //                 [arr[j],arr[j+1]] = [arr[j+1],arr[j]]
 //             }
 //         }
-        
+
 //     }
 // }
 
@@ -212,7 +187,6 @@
 
 // console.log(arr);
 
-
 // function bubble (arr){
 //     for(let i=0; i<arr.length; i++){
 //         for(let j=0; j<arr.length; j++){
@@ -228,7 +202,6 @@
 // bubble(arr)
 
 // console.log(arr);
-
 
 // function bubble (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -250,7 +223,7 @@
 //     for(let i=0; i<arr.length; i++){
 //         for(let j=0; j<arr.length; j++){
 //             if(arr[j] > arr[j+1]){
-//              [arr[j+1],arr[j]] =   [arr[j],arr[j+1]] 
+//              [arr[j+1],arr[j]] =   [arr[j],arr[j+1]]
 //             }
 //         }
 //     }
@@ -277,7 +250,6 @@
 
 // console.log(bubble(arr));
 
-
 // function bubble (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         for(let j=0; j<arr.length; j++){
@@ -293,3 +265,20 @@
 // bubble(arr)
 
 // console.log(arr);
+
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        [arr[j], arr[i]] = [arr[i], arr[j]];
+      }
+    }
+  }
+}
+
+
+const arr = [24,234,3,5,34,54,6,43]
+
+bubbleSort(arr)
+
+console.log(arr);
