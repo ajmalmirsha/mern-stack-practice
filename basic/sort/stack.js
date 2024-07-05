@@ -304,3 +304,47 @@
 // st.push(36)
 // st.pop()
 // st.display()
+
+class Node {
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class Stack {
+    constructor() {
+        this.top = null
+    }
+
+    push(value){
+        const node = new Node(value);
+        if(!this.top){
+            this.top = node;
+        } else {
+            node.next = this.top;
+            this.top =  node
+        }
+    }
+
+    pop(value){
+        const node = new Node(value);
+        if(!this.top){
+            console.log("stack underflow")
+        } else {
+            console.log(this.top.value)
+            this.top =  this.top.next
+        }
+    }
+}
+
+const s = new Stack()
+
+s.push(3)
+s.push(4)
+s.push(5)
+s.push(6)
+s.push(7)
+s.pop()
+s.pop()
+s.pop()
