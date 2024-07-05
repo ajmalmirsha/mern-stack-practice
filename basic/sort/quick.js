@@ -314,21 +314,21 @@
 
 // console.log(quicSort(arr));
 
-function quick(arr) {
-  if (arr.length <= 1) return arr;
+// function quick(arr) {
+//   if (arr.length <= 1) return arr;
 
-  const pivot = arr[0];
-  const left = [];
-  const right = [];
+//   const pivot = arr[0];
+//   const left = [];
+//   const right = [];
 
-  for (let i = 1; i < arr.length; i++) {
-    if(arr[i] <= pivot){
-        left.push(arr[i])
-    }else{
-        right.push(arr[i])
-    }
-  }
+//   for (let i = 1; i < arr.length; i++) {
+//     if(arr[i] <= pivot){
+//         left.push(arr[i])
+//     }else{
+//         right.push(arr[i])
+//     }
+//   }
 
-  return [...quick(right), pivot, ...quick(left)]
-}
- console.log(quick([3,234,34,234,23,4534,52,2,2,3,5,32,4,6,23,4,235,5,5]));
+//   return [...quick(right), pivot, ...quick(left)]
+// }
+//  console.log(quick([3,234,34,234,23,4534,52,2,2,3,5,32,4,6,23,4,235,5,5]));
