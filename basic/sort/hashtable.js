@@ -716,76 +716,192 @@
 //   }
 // }
 
-class HashTable {
-  constructor(size) {
-    this.table = [];
-    this.size = size;
-  }
+// class HashTable {
+//   constructor(size) {
+//     this.table = [];
+//     this.size = size;
+//   }
 
-  hash(key) {
-    if (typeof key === "string") {
-      let total = 0;
-      for (let i = 0; i < key.length; i++) {
-        total = +key[i].charCodeAt();
-      }
-      return total % this.size;
-    }
-    return key % this.size;
-  }
+//   hash(key) {
+//     if (typeof key === "string") {
+//       let total = 0;
+//       for (let i = 0; i < key.length; i++) {
+//         total = +key[i].charCodeAt();
+//       }
+//       return total % this.size;
+//     }
+//     return key % this.size;
+//   }
 
-  set(key, value) {
-    const index = this.hash(key);
-    let bucket = this.table[index];
-    if (!bucket) {
-      this.table[index] = [[key, value]];
-    } else {
-      do {
-        let hash = index
-        hash = this.hash(hash);
-        bucket = this.table[hash];
-        if(!bucket){
-          this.table[hash] = [[key, value]]
-        }
-      } while (!bucket);
-    }
-  }
+//   set(key, value) {
+//     const index = this.hash(key);
+//     let bucket = this.table[index];
+//     if (!bucket) {
+//       this.table[index] = [[key, value]];
+//     } else {
+//       do {
+//         let hash = index
+//         hash = this.hash(hash);
+//         bucket = this.table[hash];
+//         if(!bucket){
+//           this.table[hash] = [[key, value]]
+//         }
+//       } while (!bucket);
+//     }
+//   }
 
-  get(key) {
-    const index = this.hash(key);
-    const bucket = this.table[index];
-    if (!bucket) return console.log("item not found!");
-    const samekeyItem = bucket.find((item) => item[0] === key);
-    if (!samekeyItem) return console.log("item not found!");
-    console.log(samekeyItem[1]);
-  }
+//   get(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (!bucket) return console.log("item not found!");
+//     const samekeyItem = bucket.find((item) => item[0] === key);
+//     if (!samekeyItem) return console.log("item not found!");
+//     console.log(samekeyItem[1]);
+//   }
 
-  remove(key) {
-    const index = this.hash(key);
-    const bucket = this.table[index];
-    if (bucket) {
-      const samekeyItem = bucket.find((item) => item[0] === key);
-      bucket.splice(bucket.indexOf(samekeyItem), 1);
-    } else {
-      console.log("item not found!");
-    }
-  }
+//   remove(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (bucket) {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       bucket.splice(bucket.indexOf(samekeyItem), 1);
+//     } else {
+//       console.log("item not found!");
+//     }
+//   }
 
-  display() {
-    for (let i = 0; i < this.table.length; i++) {
-      if (this.table[i]) {
-        console.log(this.table[i]);
-      }
-    }
-  }
-}
+//   display() {
+//     for (let i = 0; i < this.table.length; i++) {
+//       if (this.table[i]) {
+//         console.log(this.table[i]);
+//       }
+//     }
+//   }
+// }
 
-const h = new HashTable(6);
+// const h = new HashTable(6);
 
-h.set("name", "ajmal");
-h.set("age", 18);
-h.set("place", 10);
-h.set("name", "web dev");
-h.get("name");
-h.remove("age");
-h.get("age");
-h.display();
+// h.set("name", "ajmal");
+// h.set("age", 18);
+// h.set("place", 10);
+// h.set("name", "web dev");
+// h.get("name");
+// // h.remove("age");
+// // h.get("age");
+// // h.display();
+
+// class HashTable {
+//   constructor(size) {
+//     this.table = [];
+//     this.size = size;
+//   }
+
+//   hash(key) {
+//     if (typeof key === "string") {
+//       let total = 0;
+//       for (let i = 0; i < key.length; i++) {
+//           total += key[i].charCodeAt()
+//       }
+//       return total % this.size
+//     }
+//     return key % this.size
+//   }
+
+//   set (key, value){
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if(!bucket){
+//       this.table[index] = [[key, value]]
+//     }else{
+//       const samekeyItem = bucket.find(item => item[0] === key)
+//       if(samekeyItem){
+//         samekeyItem[1] = value;
+//       }else{
+//         bucket.push([key, value])
+//       }
+//     }
+//   }
+
+//   get(key) {
+//     const index = this.hash(key)
+//   }
+// }
+
+// const map = new Map()
+
+// function memo (fn) {
+//   return (...args) => {
+//     let key = `${args}`
+//      if(map.has(key)){
+//       return map.get(key)
+//      }else{
+//       const result = fn(...args)
+//       map.set(key, result)
+//       return result
+//      }
+//   }
+// }
+
+// const add = (a,b) =>{
+//   console.log("add function")
+//   return a + b
+//   };
+
+// const memoizedFn = memo(add)
+
+// console.log(memoizedFn(10,30))
+// console.log(memoizedFn(10,30))
+// console.log(memoizedFn(10,20))
+// console.log(map)
+
+// const arr = [12, , 3, 4, 23, 3, [32, 3, 4], 3, 5, [32, 3, 4, 2]];
+
+// const result = arr.flatMap((x) => {
+//   console.log("X", x);
+//   return x
+// });
+
+// console.log("result", result)
+
+// function computeAmount() {
+//   let result = 0;
+//   const obj = {
+//     lacs: (amount) => {
+//       result += amount * 100000;
+//       // console.log("lacs", result);
+//       return obj;
+//     },
+//     thousand: (amount) => {
+//       result += amount * 1000;
+//       // console.log("thousand");
+//       return obj;
+//     },
+//     crore: (amount) => {
+//       result += amount * 10000000;
+//       // console.log("crores");
+//       return obj;
+//     },
+//     value: () => {
+//       return result
+//     }
+//   };
+//   return obj;
+// }
+
+// console.log(computeAmount().crore(1).lacs(2).thousand(5).value());
+
+
+// const obj = {
+//   helloWorld : function () {
+//     return "hello world" + this.name;
+//   },
+//   name: "hello"
+// }
+
+// const obj2 = {
+//   helloWorld : obj.helloWorld,
+//   name: "bye"
+// }
+
+// console.log(obj.helloWorld())
+
