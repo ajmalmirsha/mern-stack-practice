@@ -890,7 +890,6 @@
 
 // console.log(computeAmount().crore(1).lacs(2).thousand(5).value());
 
-
 // const obj = {
 //   helloWorld : function () {
 //     return "hello world" + this.name;
@@ -905,3 +904,30 @@
 
 // console.log(obj.helloWorld())
 
+class HashTable {
+  constructor(size) {
+    this.size = size;
+    this.table = [];
+  }
+
+  hash(key) {
+    if (typeof key === "string") {
+      const total = 0;
+      for (let i = 0; i < key.length; i++) {
+        total += key[i].charCodeAt();
+      }
+      return total % this.size;
+    }
+    return key % this.size;
+  }
+
+  set(key, value) {
+    const index = this.hash(key);
+    const bucket = this.table[index];
+    if(!bucket){
+      this.table[index] = [[key,value]]
+    }else{
+      
+    }
+  }
+}

@@ -266,19 +266,28 @@
 
 // console.log(arr);
 
-function bubbleSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
+// function bubbleSort(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] > arr[j]) {
+//         [arr[j], arr[i]] = [arr[i], arr[j]];
+//       }
+//     }
+//   }
+// }
+
+const bubbleSort = (arr) => {
+  for (let i = 0; i <= arr.length; i++) {
+    for (let j = i + 1; j <= arr.length - 1; j++) {
       if (arr[i] > arr[j]) {
-        [arr[j], arr[i]] = [arr[i], arr[j]];
+        [arr[i], arr[j]] = [arr[j], arr[i]];
       }
     }
   }
-}
+};
 
+const arr = [24, 234, 3, 5, 34, 54, 6, 43];
 
-const arr = [24,234,3,5,34,54,6,43]
-
-bubbleSort(arr)
+bubbleSort(arr);
 
 console.log(arr);
