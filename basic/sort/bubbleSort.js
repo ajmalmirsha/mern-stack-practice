@@ -276,18 +276,33 @@
 //   }
 // }
 
-const bubbleSort = (arr) => {
-  for (let i = 0; i <= arr.length; i++) {
-    for (let j = i + 1; j <= arr.length - 1; j++) {
-      if (arr[i] > arr[j]) {
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-    }
-  }
-};
+// const bubbleSort = (arr) => {
+//   for (let i = 0; i <= arr.length; i++) {
+//     for (let j = i + 1; j <= arr.length - 1; j++) {
+//       if (arr[i] > arr[j]) {
+//         [arr[i], arr[j]] = [arr[j], arr[i]];
+//       }
+//     }
+//   }
+// };
 
-const arr = [24, 234, 3, 5, 34, 54, 6, 43];
+// const arr = [24, 234, 3, 5, 34, 54, 6, 43];
 
-bubbleSort(arr);
+// bubbleSort(arr);
 
-console.log(arr);
+// console.log(arr);
+
+// function bubbleSort(arr) {
+//   let swapped = false;
+//   do{
+//     swapped = false
+//     for (let i = 0; i < arr.length - 1; i++) {
+//       if (arr[i] > arr[i + 1]) {
+//         swapped = true;
+//         [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+//       }
+//     }
+//   }while(swapped)
+// }
+
+

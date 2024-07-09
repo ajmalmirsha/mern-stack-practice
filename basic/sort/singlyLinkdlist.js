@@ -1146,135 +1146,187 @@
 // li.lastAdd(4);
 // li.display()
 
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+// class linkdList {
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
+
+//   firstAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       node.next = this.head;
+//       this.head = node;
+//     }
+//   }
+
+//   lastAdd(value) {
+//     const node = new Node(value);
+
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       this.tail.next = node;
+//       this.tail = node;
+//     }
+//   }
+
+//   find(target) {
+//     if (!this.head) {
+//       return console.log("list is empty!");
+//     }
+
+//     let temp = this.head;
+//     let pos = 0;
+//     while (temp) {
+//       pos += 1;
+//       if (temp.value === target) {
+//         return console.log("item found at " + pos);
+//       }
+//       temp = temp.next;
+//     }
+//   }
+
+//   addAtPos(pos, value) {
+//     const node = new Node(value);
+//     if (!this.head) return console.log("the list is empty");
+//     let temp = this.head;
+
+//     while (temp) {
+//       if (temp.next.value === pos) {
+//         node.next = temp.next.next;
+//         temp.next = node;
+//         return;
+//       }
+//       temp = temp.next;
+//     }
+//   }
+
+//   addAfterPos(pos, value) {
+//     if (!this.head) return console.log("list is empty");
+//     const node = new Node(value);
+//     let temp = this.head;
+//     while(temp){
+//       if(pos === temp.value){
+//         node.next = temp.next;
+//         temp.next = node;
+//         return
+//       }
+//       temp = temp.next
+//     }
+//   }
+
+
+//   addBefore(pos , value) {
+//     if (!this.head) return console.log("list is empty");
+//     const node = new Node(value)
+//     let temp = this.head
+//     while (temp) {
+//       if(temp.next.value === pos){
+//         node.next = temp.next;
+//         temp.next = node;
+//         return
+//       }
+//       temp = temp.next
+//     }
+//   }
+
+//   delete (pos) {
+//     let temp = this.head;
+
+//     while (temp) {
+//       if(temp.next.value === pos){
+//         temp.next = temp.next.next;
+//         return
+//       }
+//       temp = temp.next
+//     }
+//   }
+
+//   print() {
+//     let temp = this.head;
+//     while (temp) {
+//       console.log(temp.value);
+//       temp = temp.next;
+//     }
+//   }
+// }
+
+// const li = new linkdList();
+
+// li.firstAdd(23);
+// li.firstAdd(24);
+// li.firstAdd(25);
+// li.firstAdd(26);
+// li.firstAdd(27);
+// li.lastAdd(7);
+// li.lastAdd(8);
+// li.find(24);
+// li.addAtPos(25, 66);
+// li.addAfterPos(26, 66);
+// li.delete(26)
+// li.addBefore(10 - 3,88)
+// li.print();
+
+
 class Node {
-  constructor(value) {
+  constructor (value) {
     this.value = value;
-    this.next = null;
+    this.next = null
   }
 }
 
-class linkdList {
-  constructor() {
+class Linkdlist {
+  constructor () {
     this.head = null;
     this.tail = null;
   }
-
-  firstAdd(value) {
+  firstAdd (value) {
     const node = new Node(value);
-    if (!this.head) {
+    if(!this.head){
       this.head = node;
       this.tail = node;
-    } else {
+    }else{
       node.next = this.head;
       this.head = node;
     }
-  }
+  } 
 
-  lastAdd(value) {
+  lastAdd (value){
     const node = new Node(value);
-
-    if (!this.head) {
+    if(!this.head){
       this.head = node;
       this.tail = node;
-    } else {
+    }else{
       this.tail.next = node;
       this.tail = node;
     }
   }
 
-  find(target) {
-    if (!this.head) {
-      return console.log("list is empty!");
-    }
-
-    let temp = this.head;
-    let pos = 0;
-    while (temp) {
-      pos += 1;
-      if (temp.value === target) {
-        return console.log("item found at " + pos);
-      }
-      temp = temp.next;
-    }
-  }
-
-  addAtPos(pos, value) {
-    const node = new Node(value);
-    if (!this.head) return console.log("the list is empty");
-    let temp = this.head;
-
-    while (temp) {
-      if (temp.next.value === pos) {
-        node.next = temp.next.next;
-        temp.next = node;
-        return;
-      }
-      temp = temp.next;
-    }
-  }
-
-  addAfterPos(pos, value) {
-    if (!this.head) return console.log("list is empty");
-    const node = new Node(value);
+  display (){
     let temp = this.head;
     while(temp){
-      if(pos === temp.value){
-        node.next = temp.next;
-        temp.next = node;
-        return
-      }
-      temp = temp.next
-    }
-  }
-
-
-  addBefore(pos , value) {
-    if (!this.head) return console.log("list is empty");
-    const node = new Node(value)
-    let temp = this.head
-    while (temp) {
-      if(temp.next.value === pos){
-        node.next = temp.next;
-        temp.next = node;
-        return
-      }
-      temp = temp.next
-    }
-  }
-
-  delete (pos) {
-    let temp = this.head;
-
-    while (temp) {
-      if(temp.next.value === pos){
-        temp.next = temp.next.next;
-        return
-      }
-      temp = temp.next
-    }
-  }
-
-  print() {
-    let temp = this.head;
-    while (temp) {
-      console.log(temp.value);
+      console.log(temp.value)
       temp = temp.next;
     }
   }
 }
 
-const li = new linkdList();
+const li = new Linkdlist()
 
-li.firstAdd(23);
-li.firstAdd(24);
-li.firstAdd(25);
-li.firstAdd(26);
-li.firstAdd(27);
-li.lastAdd(7);
-li.lastAdd(8);
-li.find(24);
-li.addAtPos(25, 66);
-li.addAfterPos(26, 66);
-li.delete(26)
-li.addBefore(10 - 3,88)
-li.print();
+li.firstAdd(3)
+li.firstAdd(4)
+li.firstAdd(5)
+li.lastAdd(6)
+li.display()
