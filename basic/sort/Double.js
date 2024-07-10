@@ -346,15 +346,132 @@
 // // dl.addAtPos(43,77)
 // dl.display()
 
+// class Node {
+//   constructor(value) {
+//     this.prev = null;
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+// class DoubleLinkedList {
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
+
+//   firstAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//       return;
+//     }
+
+//     this.head.prev = node;
+//     node.next = this.head;
+//     this.head = node;
+//   }
+
+//   lastAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//       return;
+//     }
+//     node.prev = this.tail;
+//     this.tail.next = node;
+//     this.tail = node;
+//   }
+
+//   addAtPos(pos, value) {
+//     if (!this.head) return console.log("list is empty!");
+//     const node = new Node(value);
+
+//     let temp = this.head;
+
+//     while (temp) {
+//       if (temp.next.value === pos) {
+//         node.next = temp.next.next;
+//         node.prev = temp;
+//         temp.next.next.prev = node;
+//         temp.next = node;
+//         return;
+//       }
+//       temp = temp.next;
+//     }
+//   }
+
+//   addAfter(pos, value) {
+//     if (!this.head) return console.log("list is empty");
+//     const node = new Node(value);
+
+//     let temp = this.head;
+
+//     while (temp) {
+//       if (temp.value === pos) {
+//         node.next = temp.next;
+//         node.prev = temp;
+//         temp.next = node;
+//         return;
+//       }
+//       temp = temp.next;
+//     }
+//   }
+
+//   addBefore(pos, value) {
+//     if (!this.head) return console.log("list is empty");
+//     const node = new Node(value);
+//     let temp = this.head;
+//     if (temp.value === pos) {
+//       node.next = this.head;
+//       this.head.prev = node;
+//       this.head = node;
+//       return;
+//     }
+//     while (temp) {
+//       if (temp.next.value === pos) {
+//         node.prev = temp.next;
+//         node.next = temp.next;
+//         temp.next = node;
+//         return;
+//       }
+//       temp = temp.next;
+//     }
+//   }
+
+//   display() {
+//     let temp = this.head;
+//     while (temp) {
+//       console.log(temp.value);
+//       temp = temp.next;
+//     }
+//   }
+// }
+
+// const dl = new DoubleLinkedList();
+
+// dl.firstAdd(3);
+// dl.firstAdd(4);
+// dl.firstAdd(6);
+// dl.lastAdd(7);
+// dl.lastAdd(8);
+// dl.lastAdd(9);
+// dl.addAtPos(7, 77);
+// dl.addAfter(77, 88);
+// dl.addBefore(6, 10);
+// dl.display();
+
 class Node {
   constructor(value) {
-    this.prev = null;
     this.value = value;
     this.next = null;
+    this.prev = null;
   }
 }
 
-class DoubleLinkedList {
+class DLinkdlist {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -365,12 +482,11 @@ class DoubleLinkedList {
     if (!this.head) {
       this.head = node;
       this.tail = node;
-      return;
+    } else {
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
     }
-
-    this.head.prev = node;
-    node.next = this.head;
-    this.head = node;
   }
 
   lastAdd(value) {
@@ -378,70 +494,30 @@ class DoubleLinkedList {
     if (!this.head) {
       this.head = node;
       this.tail = node;
-      return;
+    } else {
+      node.prev = this.tail;
+      this.tail.next = node;
+      this.tail = node;
     }
-    node.prev = this.tail;
-    this.tail.next = node;
-    this.tail = node;
   }
 
   addAtPos(pos, value) {
     if (!this.head) return console.log("list is empty!");
-    const node = new Node(value);
-
     let temp = this.head;
-
-    while (temp) {
-      if (temp.next.value === pos) {
-        node.next = temp.next.next;
-        node.prev = temp;
-        temp.next.next.prev = node;
-        temp.next = node;
-        return;
-      }
-      temp = temp.next;
-    }
-  }
-
-  addAfter(pos, value) {
-    if (!this.head) return console.log("list is empty");
-    const node = new Node(value);
-
-    let temp = this.head;
-
+    const node = new Node(value)
     while (temp) {
       if (temp.value === pos) {
+        node.prev = temp.prev;
         node.next = temp.next;
-        node.prev = temp;
-        temp.next = node;
-        return;
+        temp.next.prev = node;
+        temp.prev.next = node;
       }
       temp = temp.next;
     }
   }
 
-  addBefore(pos, value) {
-    if (!this.head) return console.log("list is empty");
-    const node = new Node(value);
-    let temp = this.head;
-    if (temp.value === pos) {
-      node.next = this.head;
-      this.head.prev = node;
-      this.head = node;
-      return;
-    }
-    while (temp) {
-      if (temp.next.value === pos) {
-        node.prev = temp.next;
-        node.next = temp.next;
-        temp.next = node;
-        return;
-      }
-      temp = temp.next;
-    }
-  }
-
-  display() {
+  print() {
+    if (!this.head) return console.log("list is empty!");
     let temp = this.head;
     while (temp) {
       console.log(temp.value);
@@ -450,15 +526,13 @@ class DoubleLinkedList {
   }
 }
 
-const dl = new DoubleLinkedList();
+const d = new DLinkdlist();
 
-dl.firstAdd(3);
-dl.firstAdd(4);
-dl.firstAdd(6);
-dl.lastAdd(7);
-dl.lastAdd(8);
-dl.lastAdd(9);
-dl.addAtPos(7, 77);
-dl.addAfter(77, 88);
-dl.addBefore(6, 10);
-dl.display();
+d.firstAdd(3);
+d.firstAdd(4);
+d.firstAdd(5);
+d.firstAdd(63);
+d.lastAdd(99);
+d.lastAdd(88);
+d.addAtPos(4,44)
+d.print();
