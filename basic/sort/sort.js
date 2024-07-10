@@ -40,6 +40,6 @@ function quick(arr) {
 
 const arr = [2, 4, -3, 53, 3.4];
 
-quick(arr);
 
-console.log(arr);
+
+console.log(quick(arr));
