@@ -904,6 +904,34 @@
 
 // console.log(obj.helloWorld())
 
+// class HashTable {
+//   constructor(size) {
+//     this.size = size;
+//     this.table = [];
+//   }
+
+//   hash(key) {
+//     if (typeof key === "string") {
+//       const total = 0;
+//       for (let i = 0; i < key.length; i++) {
+//         total += key[i].charCodeAt();
+//       }
+//       return total % this.size;
+//     }
+//     return key % this.size;
+//   }
+
+//   set(key, value) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if(!bucket){
+//       this.table[index] = [[key,value]]
+//     }else{
+
+//     }
+//   }
+// }
+
 class HashTable {
   constructor(size) {
     this.size = size;
@@ -912,7 +940,7 @@ class HashTable {
 
   hash(key) {
     if (typeof key === "string") {
-      const total = 0;
+      let total = 0;
       for (let i = 0; i < key.length; i++) {
         total += key[i].charCodeAt();
       }
@@ -921,13 +949,63 @@ class HashTable {
     return key % this.size;
   }
 
-  set(key, value) {
+  add(key, value){
     const index = this.hash(key);
-    const bucket = this.table[index];
-    if(!bucket){
-      this.table[index] = [[key,value]]
+    const bucket = this.table[index]
+
+    if(bucket){
+      const samekeyItem = bucket.find(item => item[0] === key)
+      if(samekeyItem){
+        samekeyItem[1] = value;
+      }else{
+        bucket.push([key, value])
+      }
     }else{
-      
+      this.table[index] = [[key, value]]
+    }
+  }
+
+  get(key) {
+    const index = this.hash(key)
+    const bucket = this.table[index]
+    if(bucket){
+      const samekeyItem = bucket.find(item => item[0] === key)
+      if(samekeyItem){
+        return console.log(samekeyItem[1])
+      }else{
+        return console.log("item not found")
+      }
+    }else{
+      return console.log("item not found")
+    }
+  }
+
+  remove (key) {
+    const index = this.hash(key)
+    const bucket = this.table[index]
+    if(bucket){
+      const samekeyItem = bucket.find(item => item[0] === key)
+      bucket.splice(bucket.indexOf(samekeyItem),1)
+    }
+    return "item not found"
+  }
+
+  display () {
+    for (let i = 0; i < this.table.length; i++) {
+       if(this.table[i]){
+        console.log(this.table[i])
+       }      
     }
   }
 }
+
+
+const h = new HashTable(3)
+
+h.add("name", "aju")
+h.add("place", "clt")
+h.add("age", 20)
+h.add("age", 19)
+h.get("name")
+h.remove("age")
+h.display()

@@ -463,76 +463,118 @@
 // dl.addBefore(6, 10);
 // dl.display();
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-    this.prev = null;
-  }
-}
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//     this.prev = null;
+//   }
+// }
 
-class DLinkdlist {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-  }
+// class DLinkdlist {
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
 
-  firstAdd(value) {
-    const node = new Node(value);
-    if (!this.head) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      node.next = this.head;
-      this.head.prev = node;
-      this.head = node;
-    }
-  }
+//   firstAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       node.next = this.head;
+//       this.head.prev = node;
+//       this.head = node;
+//     }
+//   }
 
-  lastAdd(value) {
-    const node = new Node(value);
-    if (!this.head) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      node.prev = this.tail;
-      this.tail.next = node;
-      this.tail = node;
-    }
-  }
+//   lastAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       node.prev = this.tail;
+//       this.tail.next = node;
+//       this.tail = node;
+//     }
+//   }
 
-  addAtPos(pos, value) {
-    if (!this.head) return console.log("list is empty!");
-    let temp = this.head;
-    const node = new Node(value)
-    while (temp) {
-      if (temp.value === pos) {
-        node.prev = temp.prev;
-        node.next = temp.next;
-        temp.next.prev = node;
-        temp.prev.next = node;
-      }
-      temp = temp.next;
-    }
-  }
+//   addAtPos(pos, value) {
+//     if (!this.head) return console.log("list is empty!");
+//     let temp = this.head;
+//     const node = new Node(value);
+//     while (temp) {
+//       if (temp.value === pos) {
+//         node.prev = temp.prev;
+//         node.next = temp.next;
+//         temp.next.prev = node;
+//         temp.prev.next = node;
+//       }
+//       temp = temp.next;
+//     }
+//   }
 
-  print() {
-    if (!this.head) return console.log("list is empty!");
-    let temp = this.head;
-    while (temp) {
-      console.log(temp.value);
-      temp = temp.next;
-    }
-  }
-}
+//   addAfter(pos, value) {
+//     if (!this.head) return console.log("list is empty!");
+//     let temp = this.head;
+//     const node = new Node(value);
 
-const d = new DLinkdlist();
+//     while (temp) {
+//       if (temp.value === pos) {
+//         node.prev = temp;
+//         node.next = temp.next;
+//         temp.next = node;
+//         temp = null;
+//       } else {
+//         temp = temp.next;
+//       }
+//     }
+//   }
 
-d.firstAdd(3);
-d.firstAdd(4);
-d.firstAdd(5);
-d.firstAdd(63);
-d.lastAdd(99);
-d.lastAdd(88);
-d.addAtPos(4,44)
-d.print();
+//   addBefore (pos, value) {
+//     const node = new Node(value);
+
+//       let temp = this.head;
+//       if(temp.value === pos) {
+//         this.head.prev = node;
+//         node.next = this.head;
+//         console.log("hai")
+//         return
+//       }
+//       while (temp) {
+//         if(temp.value === pos){
+//           node.prev = temp.prev;
+//           node.next = temp;
+//           temp.prev.next = node;
+//           temp.prev = node;
+//           return
+//         }
+//         temp = temp.next
+//       }
+
+//   }
+
+//   print() {
+//     if (!this.head) return console.log("list is empty!");
+//     let temp = this.head;
+//     while (temp) {
+//       console.log(temp.value);
+//       temp = temp.next;
+//     }
+//   }
+// }
+
+// const d = new DLinkdlist();
+
+// d.firstAdd(3);
+// d.firstAdd(4);
+// d.firstAdd(5);
+// d.firstAdd(63);
+// d.lastAdd(99);
+// d.lastAdd(88);
+// d.addAtPos(4, 44);
+// d.addAfter(63, 33);
+// d.addBefore(63,5)
+// d.print();

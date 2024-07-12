@@ -416,7 +416,6 @@
 
 // console.log(merge(arr));
 
-
 // function merge (arr) {
 //     if(arr.length <= 1){
 //         return arr
@@ -441,7 +440,6 @@
 
 // const arr = [23,23,424,235,345,23,423,4]
 
-
 // console.log(merge(arr));
 
 // function merge (arr) {
@@ -459,7 +457,7 @@
 //     while(left.length && right.length){
 //         if(left[0] < right[0]){
 //             ans.push(left.shift())
-//         }else{
+//         }else{}}}
 //             ans.push(right.shift())
 //         }
 //     }
@@ -469,3 +467,123 @@
 // const arr = [23,423,42,3423,545,3,2,4]
 
 // console.log(merge(arr));
+
+// function merge(arr) {
+//   if (arr.length <= 1) return arr;
+//   const mid = Math.floor(arr.length / 2);
+//   const left = arr.slice(0, mid);
+//   const right = arr.slice(mid);
+
+//   return mergeSort(merge(left), merge(right));
+// }
+
+// function mergeSort(left, right) {
+//   const ans = [];
+//   while (left.length && right.length) {
+//     if (left[0] > right[0]) {
+//       ans.push(left.shift());
+//     } else {
+//       ans.push(right.shift());
+//     }
+//   }
+
+//   return [...ans, ...left, ...right];
+// }
+
+// function merge(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+//   const mid = Math.floor(arr.length / 2);
+//   const left = arr.slice(0, mid);
+//   const right = arr.slice(mid);
+
+//   return mergeSort(merge(left), merge(right));
+// }
+
+// function mergeSort(left, right) {
+//   const ans = [];
+//   while (left.length && right.length) {
+//     if (left[0] < right[0]) {
+//       ans.push(left.shift());
+//     } else {
+//       ans.push(right.shift());
+//     }
+//   }
+
+//   return [...ans, ...left, ...right];
+// }
+
+
+// function mergeSort(arr) {
+//   if (arr.length <= 1) return arr;
+//   const mid = Math.floor(arr.length / 2);
+//   const left = arr.slice(0, mid);
+//   const right = arr.slice(mid);
+
+//   return merge(mergeSort(left), mergeSort(right));
+// }
+
+// function merge(left, right) {
+//     const ans = [];
+//     console.log("left",left, "right", right)
+
+
+//     while (left.length && right.length) {
+//         if(left[0] < right[0]){
+//             ans.push(left.shift())
+//         }else{
+//             ans.push(right.shift())
+//         }
+//     }
+//     return [...ans,...left,...right]
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const arr = [23, 423, 42, 3423, 545, 3, 2, 4];
+
+console.log(mergeSort(arr));
+
+function mergeSort(arr) {
+    if(arr.length <= 1) return arr;
+
+    const mid = Math.floor(arr.length/2)
+    const left = arr.slice(0,mid);
+    const right = arr.slice(mid);
+
+    return merge(mergeSort(left), mergeSort(right))
+}
+
+function merge (left, right) {
+    const ans = [];
+    while(left.length && right.length){
+        if(left[0] < right[0]){
+            ans.push(left.shift())
+        }else{
+            ans.push(right.shift())
+        }
+    }
+    return [...ans,...left,...right]
+}
+
+
+
+
+
+
+
+
+
