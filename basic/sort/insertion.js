@@ -1,5 +1,3 @@
-
-
 // function insert (arr) {
 //     for( let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -12,8 +10,6 @@
 //     }
 //     return arr
 // }
-
-
 
 // function insert (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -28,18 +24,9 @@
 //     return arr
 // }
 
-
-
-
 // const arr = [32,45,52,45,2,5]
 
-
-
-
-
-
 // console.log(insert(arr));
-
 
 // function insert (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -58,12 +45,6 @@
 
 // console.log(insert(arr));
 
-
-
-
-
-
-
 // function insert (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -81,7 +62,6 @@
 
 // console.log(insert(arr));
 
-
 // function insert (arr) {
 //     for( let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -95,12 +75,9 @@
 //     return arr
 // }
 
-
 // const arr = [23,4,2,4,2,4]
 
 // console.log(insert(arr));
-
-
 
 // function insertion (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -120,8 +97,6 @@
 
 // console.log(arr);
 
-
-
 // function insertion (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -137,10 +112,6 @@
 
 // const arr  = [ 32,4,5345,345,435 ]
 
-
-
-
-
 // function insertion (arr) {
 //     for(let i=0; i < arr.length; i++){
 //         let curr = arr[i]
@@ -154,9 +125,7 @@
 //     return arr
 // }
 
-
 // console.log(insertion(arr));
-
 
 // function insertion (arr) {
 //     for(let i=0; i<arr.lenght; i++){
@@ -171,11 +140,9 @@
 //     return arr
 // }
 
-
 // const arr = [34,23,423,42,3,54,534,435]
 
 // console.log(insertion(arr));
-
 
 // function insertion (arr){
 //     for(let i=0; i<arr.length; i++){
@@ -194,7 +161,6 @@
 
 // console.log(insertion(arr));
 
-
 // function insertion (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -212,7 +178,6 @@
 
 // console.log(insertion(arr));
 
-
 // function insertion (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -227,8 +192,6 @@
 // }
 
 // const arr = [34,43,3,5,345,34,543,54]
-
-
 
 // console.log(insertion(arr));
 
@@ -250,7 +213,6 @@
 
 // console.log(arr);
 
-
 // function inserttion (arr) {
 //     for(let i=0; i<arr.length; i++){
 //         let curr = arr[i]
@@ -265,11 +227,9 @@
 
 // const arr = [32,234,23,4,234,2,3]
 
-
 // inserttion(arr)
 
 // console.log(arr)
-
 
 // function insertion (arr) {
 //     for(let i=0; i<arr.length; i++){
@@ -289,15 +249,34 @@
 
 // console.log(arr);
 
+// function insertionSort (arr) {
+//   for(let i=0; i < arr.length; i++){
+//     const curr = arr[i];
+//     let j =  i - 1;
+//     while (j >= 0 && arr[j+1] > curr) {
+//         arr[j+1] = arr[j]
+//         j--
+//     }
+//     arr[j+1] = curr
+//   }
+// }
 
-function insertionSort (arr) {
-  for(let i=0; i < arr.length; i++){
-    const curr = arr[i];
-    let j =  i - 1;
-    while (j >= 0 && arr[j+1] > curr) {
-        arr[j+1] = arr[j]
-        j--
-    }
-    arr[j+1] = curr
-  }
-}
+// function insertionSort(arr) {
+//   if (arr.length <= 1) return arr;
+//   for (let i = 0; i < arr.length; i++) {
+//     let j = i - 1;
+//     let curr = arr[i];
+//     while (j >= 0 && arr[j] > curr) {
+//       arr[j + 1] = arr[j];
+//       j--;
+//     }
+//     arr[j + 1] = curr;
+//   }
+// }
+
+
+// const arr = [23,43,534,5,24,234,34,5]
+
+// insertionSort(arr)
+
+// console.log(arr);
