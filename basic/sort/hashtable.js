@@ -1078,3 +1078,77 @@
 // h.remove("place");
 // h.print();
 
+// class HashTable {
+//   constructor(size) {
+//     this.size = size;
+//     this.table = [];
+//   }
+
+//   hash(key) {
+//     if (typeof key === "string") {
+//       let total = 0;
+//       for (let i = 0; i < key.length; i++) {
+//         total += key[i].charCodeAt();
+//       }
+//       return total % this.size;
+//     }
+//     return key % this.size;
+//   }
+
+//   insert(key, value) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (bucket) {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       if (samekeyItem) {
+//         samekeyItem[1] = value;
+//       } else {
+//         bucket.push([key, value]);
+//       }
+//     } else {
+//       this.table[index] = [[key, value]];
+//     }
+//   }
+
+//   get(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (bucket.length === 1) {
+//       return bucket[0]?.[1];
+//     }
+//     if (bucket) {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       if(samekeyItem){
+//         return samekeyItem[1]
+//       }
+//     }
+//   }
+
+//   remove(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (bucket) {
+//       const samekeyItem = bucket.find((item) => item[0] == key);
+//       if (samekeyItem) {
+//         bucket.splice(bucket.indexOf(samekeyItem), 1);
+//       }
+//     }
+//   }
+
+//   print() {
+//     for (let i = 0; i < this.table.length; i++) {
+//       if (this.table[i]) {
+//         console.log(this.table[i]);
+//       }
+//     }
+//   }
+// }
+
+// const h = new HashTable(10);
+
+// h.insert("dasdf", ":sdfsdf");
+// h.insert("gsat", ":sdf");
+// h.insert("fsdf", ":sdfsd");
+// h.remove("gsat");
+// console.log(h.get("fsdf"));
+// h.print();

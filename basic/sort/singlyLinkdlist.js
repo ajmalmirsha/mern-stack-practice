@@ -1390,3 +1390,68 @@
 // l.print();
 // console.log("-------");
 // l.reverse(l.head)
+
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null
+//   }
+// }
+
+// class LinkedList {
+//   constructor () {
+//     this.head = null
+//     this.tail = null
+//   }
+
+//   firstAdd(value) {
+//     const node = new Node(value);
+//     if(!this.head){
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       node.next = this.head;
+//       this.head = node;
+//     } 
+//   }
+
+//   lastAdd(value) {
+//     const node = new Node(value);
+//     if(!this.head){
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       this.tail.next = node;
+//       this.tail = node;
+//     } 
+//   }
+  
+
+//   print(){
+//     let temp = this.head;
+
+//     while(temp){
+//       console.log(temp.value);
+//       temp = temp.next
+//     }
+//   }
+
+//   reverse (temp){
+//     if(temp){
+//       this.reverse(temp.next)
+//       console.log(temp.value);
+//     }
+//   }
+
+// }
+
+// const l = new LinkedList()
+
+// l.firstAdd(324)
+// l.firstAdd(32)
+// l.firstAdd(34)
+// l.lastAdd(24)
+// l.lastAdd(4)
+// l.print()
+// console.log("reverse");
+// l.reverse(l.head)

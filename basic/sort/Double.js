@@ -578,3 +578,108 @@
 // d.addAfter(63, 33);
 // d.addBefore(63,5)
 // d.print();
+
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.prev = null;
+//     this.next = null;
+//   }
+// }
+
+// class DLinkdlist {
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
+
+//   firstAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       this.head.prev = node;
+//       node.next = this.head;
+//       this.head = node;
+//     }
+//   }
+
+//   lastAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       node.prev = this.tail;
+//       this.tail.next = node;
+//       this.tail = node;
+//     }
+//   }
+
+//   addAtPos(pos, value) {
+//     if (!this.head) return console.log("list is empty!");
+//     let temp = this.head;
+//     const node = new Node(value);
+//     while (temp) {
+//       if (temp.value === pos) {
+//         node.prev = temp.prev;
+//         node.next = temp.next;
+//         temp.next.prev = node;
+//         temp.prev.next = node;
+//       }
+//       temp = temp.next;
+//     }
+//   }
+
+//   addAfter(pos, value){
+//     const node = new Node(value)
+//     let temp = this.head;
+//     while(temp){
+//         if(temp.value === pos){
+//             node.prev = temp;
+//             node.next = temp.next;
+//             temp.next.prev = node;
+//             temp.next = node;
+//         }
+//         temp = temp.next
+//     }
+//   }
+
+//   addBefore(pos,value){
+//     const node = new Node(value);
+//     let temp = this.head;
+//     while(temp){
+//         if(temp.next.value === pos){
+//             node.next = temp.next;
+//             node.prev = temp;
+//             temp.next.prev = node;
+//             temp.next = node;
+//             return
+//         }
+//         temp = temp.next
+//     }
+//   }
+
+//   print() {
+//     let temp = this.head;
+
+//     while (temp) {
+//       console.log(temp.value);
+//       temp = temp.next;
+//     }
+//   }
+// }
+
+// const d = new DLinkdlist();
+
+// d.firstAdd(3);
+// d.firstAdd(4);
+// d.firstAdd(5);
+// d.firstAdd(63);
+// d.lastAdd(99);
+// d.lastAdd(88);
+// d.addAtPos(3, 44);
+// d.addAfter(63, 33);
+// d.addBefore(5,55)
+// d.print();

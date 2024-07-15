@@ -302,3 +302,45 @@
 // q.enqueue(6)
 // q.dequeue()
 // q.display()
+
+
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null
+//     }
+// }
+
+// class Queue {
+//     constructor(){
+//         this.front = null;
+//         this.rear = null;
+//     }
+
+//     enqueue(value){
+//         const node = new Node(value)
+//         if(!this.front){
+//             this.front = node;
+//             this.rear = node;
+//         } else {
+//             this.rear.next = node;
+//             this.rear = node;
+//         }
+//     }
+
+//     dequeue () {
+//         if(!this.front) return console.log("queue is empty");;
+//         console.log(this.front.value);
+//         this.front = this.front.next;
+//     }
+// }
+
+// const q = new Queue()
+
+// q.enqueue(1)
+// q.enqueue(2)
+// q.enqueue(3)
+// q.dequeue()
+// q.dequeue()
+// q.dequeue()
+// q.dequeue()

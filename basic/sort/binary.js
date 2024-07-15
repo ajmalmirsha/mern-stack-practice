@@ -351,3 +351,26 @@
 //   }
 //   return "item not found"
 // }
+
+// const arr = [2, 3, 5, 6, 7, 16, 77, 454];
+
+// function binarySearch(arr, target) {
+//   let left = 0;
+//   let right = arr.length - 1;
+
+//   while (left < right) {
+//     const mid = Math.floor((left + right) / 2);
+
+//     if (arr[mid] === target) return console.log("item found at = ", mid);
+
+//     if (arr[mid] > target) {
+//       right = mid - 1;
+//     } else {
+//       left = mid + 1;
+//     }
+//   }
+
+//   return console.log("item not found");
+// }
+
+// binarySearch(arr, 16);

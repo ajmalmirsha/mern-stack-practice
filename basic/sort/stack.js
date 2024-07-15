@@ -1,5 +1,3 @@
-
-
 // class Node {
 //      constructor(value){
 //         this.value = value
@@ -37,7 +35,6 @@
 //     }
 // }
 
-
 // const st = new Stack()
 
 // st.push(90)
@@ -45,9 +42,6 @@
 // st.push(92)
 // st.pop()
 // st.print()
-
-
-
 
 // class Node {
 //     constructor(value){
@@ -98,7 +92,6 @@
 // st.pop()
 // st.print()
 
-
 // class Node {
 //     constructor(value){
 //         this.value = value
@@ -131,7 +124,7 @@
 //         if(!this.top){
 //             return console.log('empty');
 //         }
-//         let temp = this.top 
+//         let temp = this.top
 //         while(temp){
 //             console.log(temp.value);
 //             temp = temp.next
@@ -147,7 +140,6 @@
 // st.push(31)
 // st.display()
 
-
 // let k = 1
 
 // for (let i = 0; i < 5; i++) {
@@ -158,7 +150,6 @@
 //     }
 //     console.log(row);
 //   }
-
 
 // class Node {
 //     constructor (value){
@@ -220,7 +211,7 @@
 // }
 
 // class Stack {
-//     constructor (){ 
+//     constructor (){
 //         this.top = null
 //     }
 //     push(value){
@@ -296,7 +287,6 @@
 //     }
 // }
 
-
 // const st = new stack()
 
 // st.push(34)
@@ -305,46 +295,97 @@
 // st.pop()
 // st.display()
 
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class Stack {
+//     constructor() {
+//         this.top = null
+//     }
+
+//     push(value){
+//         const node = new Node(value);
+//         if(!this.top){
+//             this.top = node;
+//         } else {
+//             node.next = this.top;
+//             this.top =  node
+//         }
+//     }
+
+//     pop(value){
+//         const node = new Node(value);
+//         if(!this.top){
+//             console.log("stack underflow")
+//         } else {
+//             console.log(this.top.value)
+//             this.top =  this.top.next
+//         }
+//     }
+// }
+
+// const s = new Stack()
+
+// s.push(3)
+// s.push(4)
+// s.push(5)
+// s.push(6)
+// s.push(7)
+// s.pop()
+// s.pop()
+// s.pop()
+
 class Node {
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
-
 class Stack {
-    constructor() {
-        this.top = null
-    }
+  constructor() {
+    this.top = null;
+  }
 
-    push(value){
-        const node = new Node(value);
-        if(!this.top){
-            this.top = node;
-        } else {
-            node.next = this.top;
-            this.top =  node
-        }
+  push(value) {
+    const node = new Node(value);
+    if (!this.top) {
+      this.top = node;
+    } else {
+      node.next = this.top;
+      this.top = node;
     }
+  }
 
-    pop(value){
-        const node = new Node(value);
-        if(!this.top){
-            console.log("stack underflow")
-        } else {
-            console.log(this.top.value)
-            this.top =  this.top.next
-        }
+  pop() {
+    if (!this.top) return console.log("stack underflow");
+    console.log(this.top.value);
+    this.top = this.top.next;
+  }
+
+  display() {
+    let temp = this.top;
+    while (temp) {
+      console.log(temp.value);
+      temp = temp.next;
     }
+  }
 }
 
-const s = new Stack()
+const s = new Stack();
 
-s.push(3)
-s.push(4)
-s.push(5)
-s.push(6)
-s.push(7)
-s.pop()
-s.pop()
-s.pop()
+s.push(3);
+s.push(4);
+s.push(5);
+s.push(6);
+s.pop();
+s.pop();
+s.pop();
+s.pop();
+s.pop();
+s.pop();
+
+// s.display()

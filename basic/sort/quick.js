@@ -332,7 +332,6 @@
 //   return [...quick(right), pivot, ...quick(left)]
 // }
 
-
 // function quick(arr) {
 //   if (arr.length <= 1) return arr;
 //   const pivot = arr[0];
@@ -349,12 +348,7 @@
 //   return [...quick(left), pivot, ...quick(right)]
 // }
 
-
-
-
-
 // console.log(quick([3,10,5,-2,0.5]));
-
 
 // function quick (arr) {
 //     if(arr.length <= 1) return arr;
@@ -371,3 +365,21 @@
 //     return [...quick(left), pivot, ...quick(right)]
 // }
 
+// function quicSort(arr) {
+//   if (arr.length <= 1) return arr;
+//   const pivot = arr[0];
+//   const left = [];
+//   const right = [];
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < pivot) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+
+//   return [...quicSort(left), pivot, ...quicSort(right)];
+// }
+
+// console.log(quicSort([3,10,5,-2,0.5]));
