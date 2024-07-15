@@ -1227,7 +1227,6 @@
 //     }
 //   }
 
-
 //   addBefore(pos , value) {
 //     if (!this.head) return console.log("list is empty");
 //     const node = new Node(value)
@@ -1279,54 +1278,115 @@
 // li.addBefore(10 - 3,88)
 // li.print();
 
+// class Node {
+//   constructor (value) {
+//     this.value = value;
+//     this.next = null
+//   }
+// }
 
-class Node {
-  constructor (value) {
-    this.value = value;
-    this.next = null
-  }
-}
+// class Linkdlist {
+//   constructor () {
+//     this.head = null;
+//     this.tail = null;
+//   }
+//   firstAdd (value) {
+//     const node = new Node(value);
+//     if(!this.head){
+//       this.head = node;
+//       this.tail = node;
+//     }else{
+//       node.next = this.head;
+//       this.head = node;
+//     }
+//   }
 
-class Linkdlist {
-  constructor () {
-    this.head = null;
-    this.tail = null;
-  }
-  firstAdd (value) {
-    const node = new Node(value);
-    if(!this.head){
-      this.head = node;
-      this.tail = node;
-    }else{
-      node.next = this.head;
-      this.head = node;
-    }
-  } 
+//   lastAdd (value){
+//     const node = new Node(value);
+//     if(!this.head){
+//       this.head = node;
+//       this.tail = node;
+//     }else{
+//       this.tail.next = node;
+//       this.tail = node;
+//     }
+//   }
 
-  lastAdd (value){
-    const node = new Node(value);
-    if(!this.head){
-      this.head = node;
-      this.tail = node;
-    }else{
-      this.tail.next = node;
-      this.tail = node;
-    }
-  }
+//   display (){
+//     let temp = this.head;
+//     while(temp){
+//       console.log(temp.value)
+//       temp = temp.next;
+//     }
+//   }
+// }
 
-  display (){
-    let temp = this.head;
-    while(temp){
-      console.log(temp.value)
-      temp = temp.next;
-    }
-  }
-}
+// const li = new Linkdlist()
 
-const li = new Linkdlist()
+// li.firstAdd(3)
+// li.firstAdd(4)
+// li.firstAdd(5)
+// li.lastAdd(6)
+// li.display()
 
-li.firstAdd(3)
-li.firstAdd(4)
-li.firstAdd(5)
-li.lastAdd(6)
-li.display()
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+// class Linkdlist {
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
+
+//   firstAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       node.next = this.head;
+//       this.head = node;
+//     }
+//   }
+
+//   lastAdd(value) {
+//     const node = new Node(value);
+//     if (!this.head) {
+//       this.head = node;
+//       this.tail = node;
+//     } else {
+//       this.tail.next = node;
+//       node = this.tail;
+//     }
+//   }
+
+//   print() {
+//     let temp = this.head;
+//     while (temp) {
+//       console.log(temp.value);
+//       temp = temp.next;
+//     }
+//   }
+
+//   reverse(temp) {
+//     if (temp) {
+//       this.reverse(temp.next);
+//       console.log(temp.value);
+//     }
+//   }
+// }
+
+
+// const l = new Linkdlist();
+
+// l.firstAdd(10);
+// l.firstAdd(20);
+// l.firstAdd(30);
+// l.firstAdd(40);
+// l.print();
+// console.log("-------");
+// l.reverse(l.head)

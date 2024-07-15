@@ -121,16 +121,28 @@
 // console.log(selection(arr));
 
 
-function selectionSort (arr) {
-    for(let i=0; i<arr.length; i++){
-        for(let j=i+1; j<= arr.length - 1; j++){
-            if(arr[i] < arr[j]){
-                [arr[i], arr[j]] = [arr[j], arr[i]]
-            }
-        }
-    }
+// function selectionSort (arr) {
+//     for(let i=0; i<arr.length; i++){
+//         for(let j=i+1; j<= arr.length - 1; j++){
+//             if(arr[i] < arr[j]){
+//                 [arr[i], arr[j]] = [arr[j], arr[i]]
+//             }
+//         }
+//     }
 
-    console.log(arr);
-}
+//     console.log(arr);
+// }
 
-selectionSort( [23,23,43,434,534,24,24,24,2435435,24])
+// selectionSort( [23,23,43,434,534,24,24,24,2435435,24])
+
+
+// function selectionSort (arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i+1; j < arr.length; j++) {
+//             if(arr[i] > arr[j]){
+//                 [arr[i],arr[j]] = [arr[j], arr[i]]
+//             }
+//         }        
+//     }
+//     console.log(arr)
+// }
