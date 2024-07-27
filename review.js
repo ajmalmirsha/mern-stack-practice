@@ -34,7 +34,6 @@
 // gp.insert(23,98)
 // gp.display()
 
-
 // class Node {
 //     constructor (value) {
 //         this.value = value
@@ -42,7 +41,6 @@
 //         this.right = null
 //     }
 // }
-
 
 // class Bst {
 //     constructor(){
@@ -118,7 +116,6 @@
 //     }
 // }
 
-
 // class Graph {
 //     constructor(){
 //         this.graph = new Map()
@@ -131,9 +128,7 @@
 //     }
 // }
 
-
 // curriying
-
 
 // const multiply = (x) => {
 //     return (y)=>{
@@ -149,13 +144,11 @@
 // }
 // multiply(7,6)()
 
-
 // function sun () {
 //     return sun (){
 
 //     }
 // }
-
 
 // function*  generator () {
 //     function abc () {
@@ -175,7 +168,6 @@
 
 // console.log(inst.next());
 // console.log(inst.next().value);
-
 
 // const address = "1.1.1.1"
 
@@ -212,14 +204,11 @@
 
 // singleNumber(nums)
 
-
 // console.log(A)
 
 // var A = 10
 
-
 // const arr = [1,2,3,4,5,6]
-
 
 // const copy = arr.concat()
 
@@ -227,7 +216,6 @@
 // console.log(copy);
 
 // console.log(arr);
-
 
 // const arr = [1,2,4,3,5,34,45,65]
 
@@ -240,7 +228,6 @@
 //     console.log(x,y,z);
 // })
 
-
 // function doSomethingAsync(callback) {
 //     // Simulate an asynchronous task (e.g., API request, setTimeout)
 //     setTimeout(function() {
@@ -248,15 +235,13 @@
 //       callback();
 //     }, 2000);
 //   }
-  
+
 // //   function onTaskComplete
-  
+
 //   // Call the function with the callback
 //   doSomethingAsync(()=>{
 //     console.log("Callback function executed after task completion.");
 //   });
-  
-
 
 // function abc (a,callback){
 //     callback(a)
@@ -266,8 +251,6 @@
 // abc(10,(a)=>{
 //     console.log('hlooo',a);
 // })
-
-
 
 // console.log('Start');
 
@@ -279,10 +262,6 @@
 //     console.log('process');
 // })
 // console.log('end');
-
-
-
-
 
 // function abc (one,two,...rest){
 //     console.log(one);
@@ -298,7 +277,6 @@
 // console.log(two);
 // console.log(rest);
 
-
 // const a = 10;
 
 // (function (){
@@ -306,9 +284,7 @@
 //         console.log(a);
 //     })()
 
-
 // console.log(a);
-
 
 // const a = 10;
 
@@ -319,7 +295,6 @@
 // function abc () {
 //     console.log(this.a);
 // }
-
 
 // const obj  = {
 //     name : 'ajmal',
@@ -332,13 +307,9 @@
 
 // abc.apply(obj,['clt','plus two'])
 
-
-
 // function abc (one, two, ...args) {
 //     console.log(args);
 // }
-
-
 
 // abc(2,3,4,45,54)
 
@@ -350,9 +321,8 @@
 //     }
 //     return sum;
 //   }
-  
+
 //   console.log(sumNumbers(1, 2, 3, 4, 5));
-  
 
 //   Spread Operator
 // const arr1 = [1, 2, 3];
@@ -361,5 +331,13 @@
 // const combinedArray = [...arr1 ,...arr2];
 // console.log(combinedArray);
 
+function isPalindrom(str) {
+  if (str.length <= 1) return true;
 
+  if (str[0] !== str[str.length-1]) return false;
+
+  return isPalindrom(str.slice(1, str.length - 1));
+}
+
+console.log(isPalindrom("racecars"));
 

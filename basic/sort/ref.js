@@ -25,7 +25,7 @@
 //  }
 
 //  addafterPos(elem,pos){
-//     let node=new Node(elem) 
+//     let node=new Node(elem)
 //     if(!this.head){
 //         this.head=node;
 //         this.tail=node;
@@ -38,7 +38,7 @@
 //             if(temp.value==pos){
 //                 node.next=temp.next
 //                 temp.next=node;
-               
+
 //                 return
 //             }
 //             temp=temp.next
@@ -46,7 +46,7 @@
 //         }
 //     }
 //         }
-    
+
 // addPossBe(elem,pos){
 //     let node=new Node(elem);
 //     if(!this.head){
@@ -68,7 +68,6 @@
 //     }
 
 // }
- 
 
 // addLast(val){
 //     let node=new Node(val)
@@ -87,7 +86,7 @@
 //     return "None"
 //    }else if(this.head.value==val){
 //     this.head=this.head.next
-//          node.next=this.head.next   
+//          node.next=this.head.next
 //    }else if(this.tail.value==val){
 //        let temp=this.head
 //        while(temp.next.next){
@@ -147,7 +146,7 @@
 // deleteDuplicates(){
 //     let seen = {}
 //     let current = this.head
-//     let prev = null 
+//     let prev = null
 //     while(current){
 //       if(seen[current.value]){
 //         prev.next = current.next
@@ -172,7 +171,7 @@
 //         let mid=Math.floor(array.length-1)/2
 //         console.log(array[mid].value);
 //     }
-//     return 
+//     return
 //   }
 
 //  print(){
@@ -183,12 +182,11 @@
 //         while(temp){
 //             console.log(temp.value);
 //             temp=temp.next
-            
+
 //         }
 //     }
 //  }
 // }
-
 
 // let list=new Linked()
 
@@ -205,10 +203,7 @@
 //  list.findMid()
 // list.revPrint()
 
-
-
 // //-------------------------Double------------------------------------------
-
 
 // class Node{
 //     constructor(val){
@@ -270,7 +265,6 @@
 //         }
 //      }
 
-
 //    addAfterPos(val,pos){
 //      let node=new Node(val)
 //      if(!this.head){
@@ -297,7 +291,6 @@
 //      }
 //    }
 
-
 //    addBeforePos(val,pos){
 //     let node =new Node(val)
 //     if(!this.head){
@@ -315,7 +308,7 @@
 //        node.next=temp.next
 //        temp.next.prev=node
 //        temp.next=node
-      
+
 //      }else{
 //         let temp=this.head
 //         while(temp){
@@ -350,7 +343,7 @@
 //             if(temp.next.value==val){
 //                 temp.next.next.prev=temp
 //                 temp.next=temp.next.next
-              
+
 //                 return
 //             }
 //             temp=temp.next
@@ -368,7 +361,7 @@
 //                 current.next.prev=previ
 //             }
 //             previ.next=current.next
-           
+
 //         }else{
 //             seen[current.value]=true
 //             previ=current
@@ -430,3 +423,106 @@
 //  list.print()
 // // list.find()
 // list.printRev()
+
+// function removeDuplicate(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] === arr[j]) {
+//         let temp = j;
+//         while (temp >= arr.length - 1 && arr[temp]) {
+//           [arr[temp], arr[temp + 1]] = [arr[temp + 1], arr[temp]];
+//           temp++;
+//         }
+//         arr.length--
+//       }
+//     }
+//   }
+//   return arr
+// }
+
+// function removeDuplicates(arr) {
+//   let j = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== arr[j]) {
+//       arr[j + 1] = arr[i];
+//       j++;
+//     }
+//   }
+//   return arr.splice(0, j + 1);
+// }
+
+// // console.log(removeDuplicates([234, 234, 5, 345, 523, 4]));
+// // [234, 5, 345, 523, 523, 4]
+// // j = 2
+
+// const arr = [234, 234, 5, 345, 523, 4];
+
+// function findLargest(arr) {
+//   let largest = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > largest) {
+//       largest = arr[i];
+//     }
+//   }
+//   console.log(largest);
+// }
+
+// function secondLargest(arr) {
+//   let largest = arr[0];
+//   let secondLargest = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > largest) {
+//       secondLargest = largest;
+//       largest = arr[i];
+//     } else if (arr[i] > secondLargest) {
+//       secondLargest = arr[i];
+//     }
+//   }
+//   console.log(secondLargest);
+// }
+
+// function findSmallest(arr) {
+//   let smallest = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < smallest) {
+//       smallest = arr[i];
+//     }
+//   }
+//   console.log(smallest);
+// }
+
+// function secondSmallest(arr) {
+//   let smallest = arr[0];
+//   let Secondsmall = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < smallest) {
+//       Secondsmall = smallest;
+//       smallest = arr[i];
+//     } else if (arr[i] < Secondsmall) {
+//       Secondsmall = arr[i];
+//     }
+//   }
+//   console.log(Secondsmall);
+// }
+
+// secondSmallest(arr);
+
+// function removeDuplicates(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i+1; j < arr.length; j++) {
+//         if(arr[i] === arr[j]){
+//             for (let s = j; s < arr.length; s++) {
+//                 if(arr[s+1]){
+//                     arr[s] = arr[s+1]
+//                 }else{
+//                     arr.length--
+//                 }
+//             }
+//         }
+//     }
+//   }
+//   return arr
+// }
+
+
+// console.log(removeDuplicates([423, 32, 423, 4234, 2, 234, 34, 34, 2]));

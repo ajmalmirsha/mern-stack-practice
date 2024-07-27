@@ -339,53 +339,53 @@
 // s.pop()
 // s.pop()
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-class Stack {
-  constructor() {
-    this.top = null;
-  }
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+// class Stack {
+//   constructor() {
+//     this.top = null;
+//   }
 
-  push(value) {
-    const node = new Node(value);
-    if (!this.top) {
-      this.top = node;
-    } else {
-      node.next = this.top;
-      this.top = node;
-    }
-  }
+//   push(value) {
+//     const node = new Node(value);
+//     if (!this.top) {
+//       this.top = node;
+//     } else {
+//       node.next = this.top;
+//       this.top = node;
+//     }
+//   }
 
-  pop() {
-    if (!this.top) return console.log("stack underflow");
-    console.log(this.top.value);
-    this.top = this.top.next;
-  }
+//   pop() {
+//     if (!this.top) return console.log("stack underflow");
+//     console.log(this.top.value);
+//     this.top = this.top.next;
+//   }
 
-  display() {
-    let temp = this.top;
-    while (temp) {
-      console.log(temp.value);
-      temp = temp.next;
-    }
-  }
-}
+//   display() {
+//     let temp = this.top;
+//     while (temp) {
+//       console.log(temp.value);
+//       temp = temp.next;
+//     }
+//   }
+// }
 
-const s = new Stack();
+// const s = new Stack();
 
-s.push(3);
-s.push(4);
-s.push(5);
-s.push(6);
-s.pop();
-s.pop();
-s.pop();
-s.pop();
-s.pop();
-s.pop();
+// s.push(3);
+// s.push(4);
+// s.push(5);
+// s.push(6);
+// s.pop();
+// s.pop();
+// s.pop();
+// s.pop();
+// s.pop();
+// s.pop();
 
-// s.display()
+// // s.display()
