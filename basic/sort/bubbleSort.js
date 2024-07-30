@@ -348,3 +348,22 @@
 //   } while (swapped);
 //   console.log(arr);
 // }
+
+// function bubbleSort(arr) {
+//   let swapped;
+//   do {
+//     swapped = false;
+//     for (let i = 0; i < arr.length; i++) {
+//       if (arr[i] > arr[i + 1]) {
+//         swapped = true;
+//         [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+//       }
+//     }
+//   } while (swapped);
+// }
+
+// const arr = [12,4,345,3456,2,3]
+
+// bubbleSort(arr)
+
+// console.log(arr);

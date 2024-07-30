@@ -1380,7 +1380,6 @@
 //   }
 // }
 
-
 // const l = new Linkdlist();
 
 // l.firstAdd(10);
@@ -1412,7 +1411,7 @@
 //     } else {
 //       node.next = this.head;
 //       this.head = node;
-//     } 
+//     }
 //   }
 
 //   lastAdd(value) {
@@ -1423,9 +1422,8 @@
 //     } else {
 //       this.tail.next = node;
 //       this.tail = node;
-//     } 
+//     }
 //   }
-  
 
 //   print(){
 //     let temp = this.head;
@@ -1455,3 +1453,57 @@
 // l.print()
 // console.log("reverse");
 // l.reverse(l.head)
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  firstAdd(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+  }
+
+  lastAdd(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+  }
+
+  print() {
+    let temp = this.head;
+    while (temp) {
+      console.log(temp.value);
+      temp = temp.next;
+    }
+  }
+}
+
+
+const l = new LinkedList();
+
+l.firstAdd(9)
+l.firstAdd(8)
+l.firstAdd(7)
+l.lastAdd(7)
+l.lastAdd(4)
+l.print()

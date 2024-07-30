@@ -389,3 +389,19 @@
 // s.pop();
 
 // // s.display()
+
+// const handler = {
+//   get: (target, property,value) => {
+//     console.log("on get target", target, value);
+//   },
+//   set: (target, property, value) => {
+//     console.log("on set target", target);
+//   },
+// };
+// const obj = {
+//   name: "ajmal",
+//   age: 19,
+// };
+// const proxy = new Proxy(obj, handler);
+// proxy.name = "aju";
+// console.log(proxy.name);

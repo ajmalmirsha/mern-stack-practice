@@ -1152,3 +1152,75 @@
 // h.remove("gsat");
 // console.log(h.get("fsdf"));
 // h.print();
+
+// class hashTable {
+//   constructor(size) {
+//     this.size = size;
+//     this.table = [];
+//   }
+
+//   hash(key) {
+//     if (typeof key === "string") {
+//       return (
+//         key.split("").reduce((pre, curr) => pre + curr.charCodeAt(), 0) %
+//         this.size
+//       );
+//     }
+//     return key % this.size;
+//   }
+
+//   add(key, value) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (!bucket) {
+//       this.table[index] = [[key, value]];
+//     } else {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       if (samekeyItem) {
+//         samekeyItem[1] = value;
+//       } else {
+//         bucket.push([key, value]);
+//       }
+//     }
+//   }
+
+//   remove(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (bucket) {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       if (samekeyItem) {
+//         bucket.splice(bucket.indexOf(samekeyItem), 1);
+//         return console.log("item deleted ", samekeyItem);
+//       }
+//     }
+//     return console.log("item not found");
+//   }
+
+//   get(key) {
+//     const index = this.hash(key);
+//     const bucket = this.table[index];
+//     if (bucket) {
+//       const samekeyItem = bucket.find((item) => item[0] === key);
+//       if (samekeyItem) return console.log(samekeyItem[1]);
+//     }
+//     return console.log("item not found");
+//   }
+
+//   print() {
+//     for (let i = 0; i < this.table.length; i++) {
+//       if (this.table[i]) {
+//         console.log(this.table[i]);
+//       }
+//     }
+//   }
+// }
+
+// const h = new hashTable(6);
+
+// h.add("name", "ajmal");
+// h.add("age", 8);
+// h.add("place", "clt");
+// h.get("name");
+// h.remove("place")
+// h.print();
